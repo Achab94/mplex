@@ -8,3 +8,4 @@ Imports: igraph
 Maintainer: Emanuele Degani <emanuele.achab@gmail.com>
 Description: This package allows to implement multiplex networks into the R framework. Some of the most common descriptors, clustering indices and centrality measures can be calculated starting from a set of nodes and layers given in input by the user.
 License: GPL (>=2)
+URL: https://github.com/Achab94/mplex
