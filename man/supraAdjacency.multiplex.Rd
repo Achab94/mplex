@@ -20,7 +20,7 @@
   The \emph{supra-adjacency matrix} visualize all the interlayer and intralayer adjacency matrices of the multiplex network into a single large matrix. It is 'filled' with all the intralayer adjacency matrices on its diagonal, and with all the interlayer adjacency matrices elsewhere.
 }
 \value{
-  The function returns an N*L x N*L \code{matrix}, composed as described before, where N is the number of nodes and L the number of layers of the network.
+  A N*L x N*L \code{matrix}, composed as described in 'Details', where N is the number of nodes and L the number of layers of the network.
 }
 \references{
 De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
@@ -40,19 +40,19 @@ Emanuele Degani \email{emanuele.achab@gmail.com}
 \code{\link{create.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 

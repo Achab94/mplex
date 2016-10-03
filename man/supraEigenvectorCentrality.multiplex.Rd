@@ -32,7 +32,7 @@ supraEigenvectorCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(o
   Irreducibility tested with the \code{testIrreducibility} is a requirred hypotesy of the Perron-Frobenius theorem, but results are usually good even if it is not strictly satisfied.
 }
 \value{
-  Output is a \code{list} with the L vectors of the multiplex eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument).
+  A \code{list} with the L vectors of the multiplex eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument).
 }
 \references{
   De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
@@ -50,19 +50,19 @@ supraEigenvectorCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(o
 \code{\link{create.multiplex}}, \code{\link{supraAdjacency.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -76,10 +76,10 @@ round(supraEigenvectorCentrality.multiplex(mplexObj), 5)
 # using 'indexNode' argument as in this case:
 
 round(
-supraEigenvectorCentrality.multiplex(mplexObj, 
+supraEigenvectorCentrality.multiplex(mplexObj,
                             indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10))
      , 5)
-     
+
 # Another way to visualize the results is to consider the standardized measures. In this case,
 # comparisons between indices on different layers can be done, because the sum of the indices
 # for each layer are forced to be 1:

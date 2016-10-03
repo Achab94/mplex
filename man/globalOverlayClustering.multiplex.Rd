@@ -26,7 +26,7 @@ globalOverlayClustering.multiplex(obj, indexLayer = 1:length(layers.multiplex(ob
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-  Output is a number, the global overlay clustering coefficient.
+  A number, the global overlay clustering coefficient.
 }
 \references{
   De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
@@ -44,19 +44,19 @@ globalOverlayClustering.multiplex(obj, indexLayer = 1:length(layers.multiplex(ob
   \code{\link{create.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -69,7 +69,7 @@ globalOverlayClustering.multiplex(mplexObj)
 globalOverlayClustering.multiplex(mplexObj, indexLayer = c(1, 2))
 
 # It could be useful to visualize the standardizing coefficient applied to the denominator
-# of the index, mostly if the relationships are weighted and not binary like in this example. 
+# of the index, mostly if the relationships are weighted and not binary like in this example.
 # Using the 'verbose = TRUE' argument, it is printed on console:
 
 globalOverlayClustering.multiplex(mplexObj, verbose = TRUE)

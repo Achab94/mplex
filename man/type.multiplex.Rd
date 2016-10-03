@@ -23,7 +23,7 @@
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-  Output is a \code{vector} with the layers' relationship type \code{strings} selected by the \code{index} argument.
+  A \code{vector} with the layers' relationship type \code{strings} selected by the \code{index} argument.
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -41,19 +41,19 @@ Emanuele Degani \email{emanuele.achab@gmail.com}
   \code{\link{create.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 

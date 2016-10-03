@@ -23,10 +23,10 @@ localClustering.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))
   Local clustering index calculated layer by layer is a good measure for studying the transitivity of a certain node in a specific (intra)layer, but it doesn't take into consideration the triadic structures that take form considering the intralayer relationships (those between two same nodes belonging to different layers). In this case, \code{\link{c1Local.multiplex}} and \code{\link{c2Local.multiplex}} functions are indicated for a \emph{multiplex} analysis of the network.
 }
 \value{
-  Output is a \code{list} of numerical \code{vectors}, each with the local clustering coefficients of the nodes (eventually selecte with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.  
+  A \code{list} of numerical \code{vectors}, each with the local clustering coefficients of the nodes (eventually selecte with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.
 }
 \references{
-  Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478 
+  Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
 }
 \author{
   Emanuele Degani \email{emanuele.achab@gmail.com}
@@ -42,19 +42,19 @@ localClustering.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))
 }
 
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -64,7 +64,7 @@ localClustering.multiplex(mplexObj)
 
 # Nodes can be eventually selected using the 'indexNode' argument:
 
-localClustering.multiplex(mplexObj, 
+localClustering.multiplex(mplexObj,
                           indexNode = sample(1:length(nodes.multiplex(mplexObj)) , 10)
                           )
 }

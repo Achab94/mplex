@@ -35,7 +35,7 @@ heterEigenvectorCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(o
 Irreducibility tested with the \code{testIrreducibility} is a requirred hypotesy of the Perron-Frobenius theorem, but results are usually good even if it is not strictly satisfied.
 }
 \value{
-Output is a \code{list} with the L vectors of the multiplex heterogeneous eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument).
+A \code{list} with the L vectors of the multiplex heterogeneous eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument), where L is the number of layers of the multiplex network.
 }
 \references{
   Solá et al. (2013) \emph{Eigenvector centrality of nodes in multiplex networks.} http://doi.org/10.1063/1.4818544
@@ -53,19 +53,19 @@ Output is a \code{list} with the L vectors of the multiplex heterogeneous eigenv
   \code{\link{create.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -76,10 +76,10 @@ heterEigenvectorCentrality.multiplex(mplexObj)
 # It could be useful to select a set of nodes on which to calculate the index. This can be done
 # using the 'indexNode' argument, as it follows:
 
-heterEigenvectorCentrality.multiplex(mplexObj, 
+heterEigenvectorCentrality.multiplex(mplexObj,
                                       indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10)
                                       )
-                                      
+
 # The particularity of this index is strictly linked to the possibility to include a so-called
 # influence matrix in the argument 'W'. This matrix rapresents the weights of the links (i.e. the
 # interlayer edges) of the multiplex network. If we set, as an example, a random influence

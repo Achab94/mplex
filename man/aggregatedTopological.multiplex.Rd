@@ -5,7 +5,7 @@
   Aggregated topological matrix of the multiplex network
 }
 \description{
-Creates the so-called \emph{aggregated topological matrix} of the multiplex network (see References for further information). This matrix is mostly used to see if one tie exists between two different nodes (eventually selected with the \code{indexNode} argument) in at least one (intra)layer of the multiplex network (eventually selected with the \code{indexLayer} argument).
+Creates the so-called \emph{aggregated topological matrix} of the multiplex network (see References for further information). This matrix is mostly used to see if one tie exists between two different nodes (eventually selected with the \code{\link{indexNode}} argument) in at least one (intra)layer of the multiplex network (eventually selected with the \code{indexLayer} argument).
 }
 \usage{
 aggregatedTopological.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE)
@@ -29,7 +29,7 @@ aggregatedTopological.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)),
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-The output is a N x N \code{matrix}, the so-called aggregated topological matrix, where N is the number of nodes of the network.
+A N x N \code{matrix}, the so-called aggregated topological matrix, where N is the number of nodes of the network.
 }
 \references{
 Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http://dx.doi.org/10.1103/PhysRevE.89.032804
@@ -47,19 +47,19 @@ This function could also be used to \emph{dichotomize} a weighted adjacency matr
 \code{\link{create.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -68,13 +68,13 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 aggregatedTopological.multiplex(mplexObj)
 
 # Creating the aggregated topological matrix, casually selecting some nodes (employees) and
-# 3 layers (relationships) between the 5 of the multiplex network. 
+# 3 layers (relationships) between the 5 of the multiplex network.
 # The command also prints on console (with option 'verbose = TRUE') the name of the layers
 # used (and selected) for the construction of the aggregated topological matrix:
 
-aggregatedTopological.multiplex(mplexObj, 
-                                indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10), 
-                                indexLayer = c(1, 3, 5), 
+aggregatedTopological.multiplex(mplexObj,
+                                indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10),
+                                indexLayer = c(1, 3, 5),
                                 verbose = TRUE
                                 )
 }

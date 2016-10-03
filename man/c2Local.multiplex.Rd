@@ -23,13 +23,13 @@ c2Local.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 
 }
 }
 \details{
-  
+
 }
 \section{Warnings }{
   Note that the C2 local clustering coefficient can be defined for a multiplex network with, at least, 3 (intra)layers. So, if \code{indexLayer} argument has length <3, the function produces a warning in console.
 }
 \value{
-  Output is a numerical \code{vector} with all the C2 local clustering coefficients for the nodes selected in \code{indexNode} argument.
+  A numerical \code{vector} with all the C2 local clustering coefficients for the nodes selected in \code{indexNode} argument.
 }
 \references{
   Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http://dx.doi.org/10.1103/PhysRevE.89.032804
@@ -48,19 +48,19 @@ c2Local.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 
 }
 
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -71,8 +71,8 @@ c2Local.multiplex(mplexObj)
 # It can be useful to select just some nodes or layers on which to calculate the
 # c2 clustering index. This can be easily done with 'indexNode' and 'indexLayer' arguments:
 
-c2Local.multiplex(mplexObj, 
-                  indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10), 
+c2Local.multiplex(mplexObj,
+                  indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10),
                   indexLayer = c(1, 3, 4)
                   )
 }

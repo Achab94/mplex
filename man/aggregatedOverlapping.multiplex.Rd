@@ -29,7 +29,7 @@ aggregatedOverlapping.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)),
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-Output is a N x N \code{matrix}, the so-called overlapped adjacency matrix, where N is the number of nodes of the network. It is simply obtained summing all the adjacency matrices of the selected (intra)layers of the multiplex network.
+A N x N \code{matrix}, the so-called overlapped adjacency matrix, where N is the number of nodes of the network. It is simply obtained summing all the adjacency matrices of the selected (intra)layers of the multiplex network.
 }
 \references{
 De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
@@ -47,19 +47,19 @@ Emanuele Degani \email{emanuele.achab@gmail.com}
 \code{\link{create.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -68,13 +68,13 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 aggregatedOverlapping.multiplex(mplexObj)
 
 # Creating the overlapped adjacency matrix, casually selecting some nodes (employees) and
-# 3 layers (relationships) between the 5 of the multiplex network. 
+# 3 layers (relationships) between the 5 of the multiplex network.
 # The command also prints on console (with option 'verbose = TRUE') the name of the layers
 # used (and selected) for the construction of the aggregated topological matrix:
 
-aggregatedOverlapping.multiplex(mplexObj, 
+aggregatedOverlapping.multiplex(mplexObj,
                                 indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10),
-                                indexLayer = c(1, 2, 3), 
+                                indexLayer = c(1, 2, 3),
                                 verbose = TRUE
                                 )
 }

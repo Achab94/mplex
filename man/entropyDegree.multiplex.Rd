@@ -5,7 +5,7 @@
   Entropy of the degrees' distribution
 }
 \description{
-  This function calculates the entropy measure used to evaluate the homogeneity/heterogeneity of the nodes' distribution on a certain (intra)layer of the multiplex network. The formula is inspired by Battiston et al. (2014) work (see References). 
+  This function calculates the entropy measure used to evaluate the homogeneity/heterogeneity of the nodes' distribution on a certain (intra)layer of the multiplex network. The formula is inspired by Battiston et al. (2014) work (see References).
 }
 \usage{
 entropyDegree.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOverlappingLayer = 1:length(layers.multiplex(obj)), display = FALSE)
@@ -29,7 +29,7 @@ entropyDegree.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOv
   Instead of the formula written in Battiston et al. (2014) work, the function has a small correction in the denominator, avoiding \code{NaN} output if the degree is zero.
 }
 \value{
-  Output is a numeric \code{vector} with all the entropy measures evaluated on the nodes of the multiplex network (eventually selected with the \code{indexNode} argument).
+  A numeric \code{vector} with all the entropy measures evaluated on the nodes of the multiplex network (eventually selected with the \code{indexNode} argument).
 }
 \references{
 Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http://dx.doi.org/10.1103/PhysRevE.89.032804
@@ -48,19 +48,19 @@ Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http:
 }
 
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -69,21 +69,21 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 entropyDegree.multiplex(mplexObj)
 
-# A better way to visualize the results is given by the 'display = TRUE' option. 
+# A better way to visualize the results is given by the 'display = TRUE' option.
 # We see, in this case, that quite all the nodes have an entropy measure > 0.80: this mean
 # that they have a similar degree in all the intralayer of the multiplex network; nonetheless
 # 3 employees have a really low entropy measure:
 
 entropyDegree.multiplex(mplexObj, display = TRUE)
 
-# It could be also useful to select just some nodes or levels on which to calculate the 
+# It could be also useful to select just some nodes or levels on which to calculate the
 # entropy measure, in order to investigate which layer(s) is (are) causing a low measure
 # of entropy for a certain node.
 # This can be easily done with both 'indexNode' and 'indexOverlappingLayer' arguments:
 
-entropyDegree.multiplex(mplexObj, 
+entropyDegree.multiplex(mplexObj,
                         indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10),
-                        indexOverlappingLayer = (1:5)[-3], 
+                        indexOverlappingLayer = (1:5)[-3],
                         display = TRUE
                         )
 }

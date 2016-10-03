@@ -5,7 +5,7 @@
   Creation of the \code{multiplex} structure
 }
 \description{
-  \code{create.multiplex} creates the \code{multiplex} structure, which is used in all the other functions of the package. This function implements the tensor-based framework proposed by De Domenico (2014) creating a list with nodes, layers and layers' names, adjacency matrices and types of relationships within each layer.  
+  This function creates the \code{multiplex} structure, which is used in all the other functions of the package. This function implements the tensor-based framework proposed by De Domenico (2014) creating a list with nodes, layers and layers' names, adjacency matrices and types of relationships within each layer.
 }
 \usage{
   create.multiplex(nodes, layersNames = FALSE, layer1, type1, ...)
@@ -16,7 +16,7 @@
   Any \code{data.frame} structure containing information about the nodes: for each row, the first column is the ID of the node, the second is the label with its name/description.
 }
   \item{layersNames}{
-  Allows to specify a vector of labels for the layers given in input by the next arguments. Default is \code{FALSE}: in this case, the i-th layer will be called \emph{Layer(i)}.  
+  Allows to specify a vector of labels for the layers given in input by the next arguments. Default is \code{FALSE}: in this case, the i-th layer will be called \emph{Layer(i)}.
 }
   \item{layer1}{
   Any \code{data.frame} or \code{matrix} structure containing the information about the first layer of the multiplex network: for each row, the first column is the ID of the starting node, the second is the ID of the ending node, the third is the weight of the relationship (1 if unweighted).
@@ -46,10 +46,10 @@
   A \code{vector} object with all the strings describind the types of relationship, one for each layer of the multiplex network;
 }
   \item{layersNames}{
-  A \code{vector} object containing all the strings for the labels of the layers. If given in input (with \code{layersNames} argument), it is the same vector.  
+  A \code{vector} object containing all the strings for the labels of the layers. If given in input (with \code{layersNames} argument), it is the same vector.
 }
   \item{interlayersMatrix}{
-  A N*L x N*L \code{matrix} object, where N is the number of nodes and L the number of layers of the multiplex network, rapresenting the interlayer structure as matrix of the adjacency matrices of the interlayer relationships between each couple of intralayers. 
+  A N*L x N*L \code{matrix} object, where N is the number of nodes and L the number of layers of the multiplex network, rapresenting the interlayer structure as matrix of the adjacency matrices of the interlayer relationships between each couple of intralayers.
   }
 }
 \references{
@@ -72,7 +72,7 @@ Emanuele Degani \email{emanuele.degani@gmail.com}
 }
 
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
@@ -80,16 +80,16 @@ data(aarhus_mplex)
 # Note that all the layers refers to undirected relationship (so, their 'type'
 # arguments are not specified).
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
-                            
+
 # Display the structure of the multiplex object created:
 
 str(mplexObj)
