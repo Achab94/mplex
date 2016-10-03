@@ -12,7 +12,7 @@ create.multiplex <- function(nodes, layersNames = FALSE, layer1, type1, ...){
     type <- "undirected"
   }
 
-  #################################### Gestione ... ####################################
+  #################################### Handling ... ####################################
   dots <- list(...)
 
   for(i in 1:length(dots)){
@@ -420,7 +420,7 @@ entropyDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(ob
 
   H <- function(row){
     last <- length(row)
-    return(-sum((row[-last]/row[last]) * log((row[-last] + 0.001)/row[last]))) # Correzzione +0.5
+    return(-sum((row[-last]/row[last]) * log((row[-last] + 0.001)/row[last]))) # Correction +0.5
   }
 
   tab <- cbind(simplify2array(degree.multiplex(obj))[, indexOverlappingLayer], degreesOverlapped)
@@ -481,6 +481,9 @@ localClustering.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(
   return(clusteringList)
 }
 
+# This function comes from 'gtools' package:
+# https://cran.r-project.org/web/packages/gtools/index.html
+
 permutations <- function(n, r, v = 1:n, set = TRUE, repeats.allowed=FALSE){
   if(mode(n) != "numeric" || length(n) != 1
      || n < 1 || (n %% 1) != 0) stop("bad value of n")
@@ -533,7 +536,7 @@ c1Local.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), i
   N <- length(nodes.multiplex(obj))
   L <- length(indexLayer)
   if(L < 2) stop("c1 can only be defined for multiplex composed of at least 2 layers.")
-  adjList <- adjacency.multiplex(obj) # Lista delle matrici di adiacenza per ciascun livello
+  adjList <- adjacency.multiplex(obj) # List of adjacency matrices for each level of the multiplex network.
 
 # require(gtools)
   couples <- t(permutations(n = L, r = 2, indexLayer))
@@ -693,7 +696,7 @@ supraEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   L <- length(layers.multiplex(obj))
 
   if(testIrreducibility){
-  ########## TESTING DELL'IRRIDUCIBILITA' PER IL THM DI PERRON-FROBENIUS ##########
+  ########## TESTING OF IRREDUCIBILITY FOR PERRON-FROBENIUS'S THM ##########
     irreducible <- function(matrix, maxP){
       Mstart <- matrix
       m <- 1
@@ -745,7 +748,7 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   perronMatrix <- kronecker(W, matrix(1, N, N)) * adjTransposeBlockVectorMatrix
 
   if(testIrreducibility){
-  ########## TESTING DELL'IRRIDUCIBILITA' PER IL THM DI PERRON-FROBENIUS ##########
+    ########## TESTING OF IRREDUCIBILITY FOR PERRON-FROBENIUS'S THM ##########
     irreducible <- function(matrix, maxP){
       Mstart <- matrix
       m <- 1
@@ -782,87 +785,3 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   if(sign(Re(outMatrix[1,1])) == -1) return((-1) * Re(outMatrix[, indexNode]))
   else return(Re(outMatrix[, indexNode]))
 }
-
-
-'
-############# CODICI DA METTERE IN APPENDICE ###############
-
-# Heatmap 1 ---------------------------------------------------------------
-
-degree <- degree.multiplex(M)
-overlayMatrix <- aggregated.overlapping.multiplex(M)
-degreeVectors <- data.frame(lunch=degree$lunch,
-                            facebook=degree$facebook,
-                            coauthor=degree$coauthor,
-                            leisure=degree$leisure,
-                            work=degree$work,
-                            overlay=degree(graph.adjacency(overlayMatrix, mode = "undirected"), v = nodes.multiplex(M)))
-library(ggplot2)
-library(reshape2)
-qplot(x=Var1,y=Var2,data=melt(cor(degreeVectors, method = "kendall")), fill=value, geom="tile") +
-  scale_fill_gradient2(limits=c(-1, 1), name = "Kendall\nCorrelation") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 15, hjust = 1),
-        axis.text.y = element_text(vjust = 1, size = 15, hjust = 1))
-
-
-# Heatmap 2 ---------------------------------------------------------------
-
-t <- transitivity(graph.adjacency(aggregated.overlapping.multiplex(M), mode = "undirected"), type = "local", vids = 1:61)
-c1 <- c1.local.multiplex(M)
-c2 <- c2.local.multiplex(M)
-lunch <- local.clustering.multiplex(M)[[1]]
-work <- local.clustering.multiplex(M)[[5]]
-
-clustering <- data.frame(overlay=t[-c(1, 2, 22, 38, 43, 60)],
-                         c1=c1[-c(1, 2, 22, 38, 43, 60)],
-                         c2=c2[-c(1, 2, 22, 38, 43, 60)],
-                         lunch=lunch[-c(1, 2, 22, 38, 43, 60)],
-                         work=work[-c(1, 2, 22, 38, 43, 60)])
-library(ggplot2)
-library(reshape2)
-qplot(x=Var1,y=Var2,data=melt(cor(clustering, method = "kendall")), fill=value, geom="tile") +
-  scale_fill_gradient2(limits=c(-1, 1), name = "Kendall\nCorrelation", low="darkblue", high="darkred", guide="colorbar") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 15, hjust = 1),
-        axis.text.y = element_text(vjust = 1, size = 15, hjust = 1))
-
-
-# Heatmap 3 ---------------------------------------------------------------
-
-eigenVectors <- round(supra.eigenvector.centrality.multiplex(M, rowStand = TRUE), 4)
-eigenLunch <- eigenVectors[1,]
-eigenFacebook <- eigenVectors[2,]
-eigenCoauthor <- eigenVectors[3,]
-eigenLeisure <- eigenVectors[4,]
-eigenWork <- eigenVectors[5,]
-
-eLunch <- round(evcent(graph.multiplex(M)[[1]])[[1]], 4)
-eFacebook <- round(evcent(graph.multiplex(M)[[2]])[[1]], 4)
-eCoauthor <- round(evcent(graph.multiplex(M)[[3]])[[1]], 4)
-eLeisure <- round(evcent(graph.multiplex(M)[[4]])[[1]], 4)
-eWork <- round(evcent(graph.multiplex(M)[[5]])[[1]], 4)
-
-W <- matrix(1, 5, 5)
-diag(W) <- 0
-heterEigen <- heter.eigenvector.centrality.multiplex(M, W = W)
-
-eigenvec <- data.frame(lunchSupra=eigenLunch,
-                       facebookSupra=eigenFacebook,
-                       coauthorSupra=eigenCoauthor,
-                       leisureSupra=eigenLeisure,
-                       workSupra=eigenWork,
-                       lunchHeter=heterEigen[1,],
-                       facebookHeter=heterEigen[2,],
-                       coauthorHeter=heterEigen[3,],
-                       leisureHeter=heterEigen[4,],
-                       workHeter=heterEigen[5,],
-                       lunch=eLunch,
-                       facebook=eFacebook,
-                       coauthor=eCoauthor,
-                       leisure=eLeisure,
-                       work=eWork,
-                       overlayDegree=degree.centrality.multiplex(M))
-qplot(x=Var1,y=Var2,data=melt(cor(eigenvec, method = "kendall")), fill=value, geom="tile") +
-  scale_fill_gradient2(limits=c(-1, 1), name = "Kendall\nCorrelation", low="darkred", high="black", guide="colorbar") +
-  theme(axis.text.x = element_text(angle = 45, vjust = 1, size = 14, hjust = 1),
-        axis.text.y = element_text(vjust = 1, size = 14, hjust = 1))
-'
