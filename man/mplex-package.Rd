@@ -21,7 +21,7 @@ Functions contained in this package make use of the \code{multiplex} class, whic
 
 Some functions for easily recovering the elements of the multiplex network (the \code{multiplex}-class object) are provided, such as \code{\link{nodes.multiplex}} for retrieving the list of nodes, \code{\link{adjacency.multiplex}} for the list of all the adjacency matrices of the layers, etc...
 
-Other functions such as \code{\link{degree.multiplex}}, \code{\link{meanDegree.multiplex}} or \code{\link{density.multiplex}} allows the user to perform some of the basic descriptors for each of the layers composing the multiplex structure of the network, specifying the nodes and layers on which to compute them.
+Other functions such as \code{\link{degree.multiplex}}, \code{\link{meanDegree.multiplex}} or \code{\link{densityLayers.multiplex}} allows the user to perform some of the basic descriptors for each of the layers composing the multiplex structure of the network, specifying the nodes and layers on which to compute them.
 
 Functions such as \code{\link{supraAdjacency.multiplex}} or \code{\link{aggregatedOverlapping.multiplex}} performs some basic transformation of the network into particular structures which can be sometimes useful for having a first-approach visualization of the multiplex network, such as the so-called Supra-adjacency matrix, or the Aggregated Overlapping matrix.
 

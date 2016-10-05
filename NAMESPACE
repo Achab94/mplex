@@ -12,7 +12,7 @@ export(
 "degree.multiplex",
 "degreeCentrality.multiplex",
 "degreeDistribution.multiplex",
-"density.multiplex",
+"densityLayers.multiplex",
 "entropyDegree.multiplex",
 "globalOverlayClustering.multiplex",
 "heterEigenvectorCentrality.multiplex",
