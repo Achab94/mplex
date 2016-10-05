@@ -38,8 +38,7 @@ De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.
 
 Kivelä, M. et al (2014). \emph{Multilayer Networks.} http://doi.org/10.1093/comnet/cnu016
 }
-~~ Optionally other standard keywords, one per line, from file KEYWORDS in the R ~~
-~~ documentation directory ~~
+
 \keyword{ package }
 \seealso{
 \code{\link{create.multiplex}}
