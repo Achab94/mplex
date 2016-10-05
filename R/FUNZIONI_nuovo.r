@@ -299,7 +299,7 @@ varianceDegree.multiplex <- function(obj, indexNodeVar = 1:length(nodes.multiple
 }
 
 
-density.multiplex <- function(obj){
+densityLayers.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   densityList <- list()

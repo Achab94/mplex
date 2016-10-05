@@ -1,5 +1,5 @@
-\name{density.multiplex}
-\alias{density.multiplex}
+\name{densityLayers.multiplex}
+\alias{densityLayers.multiplex}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
   Layers' density of the multiplex network
@@ -8,7 +8,7 @@
  Calculates the density of the (intra)layers of the multiplex network, combining the \code{graph.multiplex} and \code{igraph}'s \code{density} functions.
 }
 \usage{
-density.multiplex(obj)
+densityLayers.multiplex(obj)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -51,6 +51,6 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 # We see, for example, that "lunch" and "work" are the denser intralayers, while "coauthor"
 # is the less dense.
 
-density.multiplex(mplexObj)
+densityLayers.multiplex(mplexObj)
 
 }
