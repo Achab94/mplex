@@ -11,7 +11,7 @@
   totalDegree.multiplex(obj,
                         indexNode = 1:length(nodes.multiplex(obj)),
                         indexLayer = 1:length(layers.multiplex(obj)),
-                        verbose = TRUE
+                        verbose = FALSE
                         )
 }
 %- maybe also 'usage' for other objects documented here.

@@ -8,7 +8,7 @@
  Calculates the density of the (intra)layers of the multiplex network, combining the \code{graph.multiplex} and \code{igraph}'s \code{density} functions.
 }
 \usage{
-density.multiplex(multiplex)
+density.multiplex(obj)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

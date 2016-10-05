@@ -9,7 +9,7 @@
 }
 \usage{
 varianceDegree.multiplex(obj,
-                        indexNodeMean = 1:length(nodes.multiplex(obj)),
+                        indexNodeVar = 1:length(nodes.multiplex(obj)),
                         verbose = FALSE
                         )
 }
