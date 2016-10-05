@@ -8,7 +8,12 @@
   This function calculates the \emph{multiplex eigenvector centrality} indices of the multiplex network, for each of its (inter)layers. The operation is conducted calculating the eigenvector referred to the maximum (in absolute value) eigenvalue of the \emph{supra adjacency matrix} of the multiplex network, obtained with the \code{supra.adjacency.multiplex} function. Defined N the number of nodes and L the number of (inter)layers of the multiplex network, the supra-adjacency matrix is N*L x N*L, thus the eigenvector has length N*L. The L vectors given in output are simply obtained breaking the N*L eigenvector into L vectors, each of length N and referred to the multiplex eigenvector centrality measures of the nodes (eventually selected with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.
 }
 \usage{
-supraEigenvectorCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), rowStand = TRUE, testIrreducibility = FALSE, maxPower = 100)
+supraEigenvectorCentrality.multiplex(obj,
+                                    indexNode = 1:length(nodes.multiplex(obj)),
+                                    rowStand = TRUE,
+                                    testIrreducibility = FALSE,
+                                    maxPower = 100
+                                    )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

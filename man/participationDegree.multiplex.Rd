@@ -8,7 +8,11 @@
   This function calculates the \emph{multiple participation coefficient} as a measure used to evaluate if a node is \emph{truly multiplex} (if it belongs to all the (intra)layers of the multiplex network) or \emph{focused} (if it belongs to just one (intra)layers of the multiplex networks). The formula is inspired by Battiston et al. (2014) work (see References) and assumes values in a range between 0 (if the node is \emph{focused}) and 1 (if the node is \emph{truly multiplex}).
 }
 \usage{
-participationDegree.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOverlappingLayer = 1:length(layers.multiplex(obj)), display = FALSE)
+participationDegree.multiplex(obj,
+                              indexNode = 1:length(nodes.multiplex(obj)),
+                              indexOverlappingLayer = 1:length(layers.multiplex(obj)),
+                              display = FALSE
+                              )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

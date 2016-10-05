@@ -62,7 +62,8 @@ degree.multiplex(mplexObj)
 degree.multiplex(mplexObj, indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10))
 
 # Supposing one (or more) layers of the multiplex network have a directed relationship (for
-# example, the third), we can obtain both the in-degree, out-degree and total-degree measures # using the option 'modeDirected = TRUE':
+# example, the third), we can obtain both the in-degree, out-degree and total-degree measures
+# using the option 'modeDirected = TRUE':
 
 # 1) Creating the multiplex network with a directed relationship (coauthor, L3)
 mplexObjDirected <- create.multiplex(nodes = aarhus_mplex$nodes,
@@ -76,7 +77,8 @@ mplexObjDirected <- create.multiplex(nodes = aarhus_mplex$nodes,
                                     aarhus_mplex$L5
                                     )
 
-# 2) Using the 'modeDirected = TRUE' option. Note the output and the list nested in $coauthor argument, containing the 3 measures:
+# 2) Using the 'modeDirected = TRUE' option. Note the output and the list
+# nested in $coauthor argument, containing the 3 measures:
 
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)$coauthor

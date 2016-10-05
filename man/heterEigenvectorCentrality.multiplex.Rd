@@ -8,7 +8,14 @@
  The function calculates the \emph{multiplex heterogeneous eigenvector centrality indices} proposed by Sola' et al. (see References for further information). This measure refeirs to the eigenvector of a special N*L x N*L matrix obtained from the (inter)layer adjacency matrices and the so-called \emph{influence matrix} of the multiplex network, where N is the number of nodes and L the number of layers of the multiplex network taken into consideration. Its eigenvector has length N*L, thus it's breaked into L sub-vectors, each of them refers to a certain (intra)layer of the multiplex network.
 }
 \usage{
-heterEigenvectorCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), W = matrix(1, length(layers.multiplex(obj)), length(layers.multiplex(obj))), rowStand = TRUE, testIrreducibility = FALSE, maxPower = 100)
+heterEigenvectorCentrality.multiplex(obj,
+                                    indexNode = 1:length(nodes.multiplex(obj)),
+                                    W = matrix(1, length(layers.multiplex(obj)),
+                                    length(layers.multiplex(obj))),
+                                    rowStand = TRUE,
+                                    testIrreducibility = FALSE,
+                                    maxPower = 100
+                                    )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

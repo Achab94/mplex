@@ -28,9 +28,8 @@ adjacency.multiplex(obj, index = 1:length(obj$adjacency))
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
 
-
 \seealso{
-\code{\link{create.multiplex}}, \code{\link{add.interlayer.multiplex}}
+\code{\link{create.multiplex}}
 }
 
 \examples{

@@ -8,7 +8,10 @@
   Creates the \emph{overlapped adjacency matrix} (see References), which is the adjacency matrix of the \emph{overlay monoplex network} based on a specific multiplex network. It is mostly useful for detecting how many times two different nodes are linked each other on the (intra)layers of the multiplex network (eventually selected with the \code{indexLayer} argument).
 }
 \usage{
-aggregatedOverlapping.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE)
+aggregatedOverlapping.multiplex(obj,
+                                indexNode = 1:length(nodes.multiplex(obj)),
+                                indexLayer = 1:length(layers.multiplex(obj)),
+                                verbose = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

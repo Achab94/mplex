@@ -8,7 +8,10 @@
  This function calculates De Domenico et al.'s \emph{global overlay clustering coefficient} (see References for further information). It is defined as a kind of generalization of \emph{C1 global clustering coefficient} and \emph{C2 global clustering coefficient}, and it's simply obtained as the local clustering coefficient of the \emph{overlay monoplex network} of the multiplex network obtained with \code{aggregated.overlapping.multiplex} function. The index has a standardization that allows comparisons with other multiplex network: the standardizing factor can be obtained with the \code{verbose} argument.
 }
 \usage{
-globalOverlayClustering.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE)
+globalOverlayClustering.multiplex(obj,
+                                  indexLayer = 1:length(layers.multiplex(obj)),
+                                  verbose = FALSE
+                                  )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

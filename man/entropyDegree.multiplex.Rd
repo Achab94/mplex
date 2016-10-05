@@ -8,7 +8,11 @@
   This function calculates the entropy measure used to evaluate the homogeneity/heterogeneity of the nodes' distribution on a certain (intra)layer of the multiplex network. The formula is inspired by Battiston et al. (2014) work (see References).
 }
 \usage{
-entropyDegree.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOverlappingLayer = 1:length(layers.multiplex(obj)), display = FALSE)
+entropyDegree.multiplex(obj,
+                        indexNode = 1:length(nodes.multiplex(obj)),
+                        indexOverlappingLayer = 1:length(layers.multiplex(obj)),
+                        display = FALSE
+                        )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

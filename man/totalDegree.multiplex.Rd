@@ -8,7 +8,11 @@
   This function calculates the total degrees (as a sum of the degrees on the single layers) of the multiplex network.
 }
 \usage{
-  totalDegree.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = TRUE)
+  totalDegree.multiplex(obj,
+                        indexNode = 1:length(nodes.multiplex(obj)),
+                        indexLayer = 1:length(layers.multiplex(obj)),
+                        verbose = TRUE
+                        )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

@@ -8,7 +8,10 @@
   Calculates Battiston et al.'s \emph{C2} local clustering coefficient of a multiplex network. Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index takes into consideration all the possible tradics structures that takes form even considering interlayers relationships. The index is defined, for a certain node v_i (eventually selected with \code{indexNode} argument) as the ratio between the number of 3-triangles that contains v_i, and (L - 2) times the number of 2-traids centred in v_i, defines L as the number of (intra)layers taken into consideration.
 }
 \usage{
-c2Local.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)))
+c2Local.multiplex(obj,
+                  indexNode = 1:length(nodes.multiplex(obj)),
+                  indexLayer = 1:length(layers.multiplex(obj))
+                  )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{

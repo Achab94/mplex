@@ -28,7 +28,7 @@ density.multiplex(multiplex)
 }
 
 \seealso{
-\code{\link{create.multiplex}}, \code{\link[igraph]{density}}}
+\code{\link{create.multiplex}}, \code{\link[igraph]{graph.density}}}
 
 \examples{
 # Loading Aarhus CS Department dataset.

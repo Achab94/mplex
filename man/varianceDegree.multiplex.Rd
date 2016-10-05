@@ -8,7 +8,10 @@
   This function calculates the variance of the degrees on each (intra)layer of the multiplex network. For (intra)layers with \emph{directed} relationships, the function considers the 'total degree' descriptor.
 }
 \usage{
-varianceDegree.multiplex(obj, indexNodeMean = 1:length(nodes.multiplex(obj)), verbose = FALSE)
+varianceDegree.multiplex(obj,
+                        indexNodeMean = 1:length(nodes.multiplex(obj)),
+                        verbose = FALSE
+                        )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
