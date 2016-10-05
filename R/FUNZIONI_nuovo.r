@@ -178,7 +178,7 @@ graph.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   G <- list()
-  require(igraph)
+# require(igraph)
   for(i in 1:length(layers.multiplex(obj))){
     G[[i]] <- graph.adjacency(adjmatrix = adjacency.multiplex(obj)[[i]],
                               mode = type.multiplex(obj, index = i))
@@ -193,7 +193,7 @@ degree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), mo
 
   degreeList <- list()
 
-  require(igraph)
+# require(igraph)
   for(i in 1:length(layers.multiplex(obj))){
     degreeList[[i]] <- degree(graph.multiplex(obj)[[i]], v = indexNode, mode = "total", loops = FALSE)
     if(type.multiplex(obj)[i] == "directed" & modeDirected){
@@ -211,7 +211,7 @@ degreeDistribution.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   distributionList <- list()
-  require(igraph)
+# require(igraph)
   graphList <- graph.multiplex(obj)
   for(i in 1:length(layers.multiplex(obj))){
     distributionList[[i]] <- degree.distribution(graphList[[i]], mode = "total", loops = FALSE)
@@ -225,7 +225,7 @@ degreeDistribution.multiplex <- function(obj){
 totalDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
-  require(igraph)
+# require(igraph)
   degreeList <- degree.multiplex(obj)
 
   totalDegree <- rep(0, length(nodes.multiplex(obj)))
@@ -252,7 +252,7 @@ meanDegree.multiplex <- function(obj, indexNodeMean = 1:length(nodes.multiplex(o
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   meanList <- list()
-  require(igraph)
+# require(igraph)
   degreeList <- degree.multiplex(obj, indexNodeMean)
 
   for(i in 1:length(layers.multiplex(obj))){
@@ -277,7 +277,7 @@ varianceDegree.multiplex <- function(obj, indexNodeVar = 1:length(nodes.multiple
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   varList <- list()
-  require(igraph)
+# require(igraph)
   degreeList <- degree.multiplex(obj, indexNodeVar)
 
   N <- length(indexNodeVar)
@@ -299,11 +299,11 @@ varianceDegree.multiplex <- function(obj, indexNodeVar = 1:length(nodes.multiple
 }
 
 
-density.multiplex <- function(obj){
+densityLayers.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   densityList <- list()
-  require(igraph)
+# require(igraph)
   graphList <- graph.multiplex(obj)
 
   for(i in 1:length(layers.multiplex(obj))){
@@ -415,7 +415,7 @@ supraAdjacency.multiplex <- function(obj){
 entropyDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOverlappingLayer = 1:length(layers.multiplex(obj)), display = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
-  require(igraph)
+# require(igraph)
   degreesOverlapped <- degree(graph.adjacency(aggregatedOverlapping.multiplex(obj, indexLayer = indexOverlappingLayer), mode = "undirected"), loops = FALSE) # Vettore dei degree sull'overlapped
 
   H <- function(row){
@@ -440,7 +440,7 @@ entropyDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(ob
 participationDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOverlappingLayer = 1:length(layers.multiplex(obj)), display = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
-  require(igraph)
+# require(igraph)
   degreesOverlapped <- degree(graph.adjacency(aggregatedOverlapping.multiplex(obj, indexLayer = indexOverlappingLayer)), loops = FALSE) # Vettore dei degree sull'overlapped
 
   P <- function(row){
@@ -469,7 +469,7 @@ localClustering.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   graphList <- graph.multiplex(obj)
-  require(igraph)
+# require(igraph)
   clusteringList <- list()
 
   for(i in 1:length(layers.multiplex(obj))){

@@ -1,1 +1,36 @@
-exportPattern("^[[:alpha:]]+")
+# exportPattern("^[[:alpha:]]+")
+
+export(
+"adjacency.multiplex",
+"aggregatedOverlapping.multiplex",
+"aggregatedTopological.multiplex",
+"C1Global.multiplex",
+"c1Local.multiplex",
+"C2Global.multiplex",
+"c2Local.multiplex",
+"create.multiplex",
+"degree.multiplex",
+"degreeCentrality.multiplex",
+"degreeDistribution.multiplex",
+"densityLayers.multiplex",
+"entropyDegree.multiplex",
+"globalOverlayClustering.multiplex",
+"heterEigenvectorCentrality.multiplex",
+"interlayer.multiplex",
+"layers.multiplex",
+"localClustering.multiplex",
+"meanDegree.multiplex",
+"nodes.multiplex",
+"participationDegree.multiplex",
+"supraAdjacency.multiplex",
+"supraEigenvectorCentrality.multiplex",
+"totalDegree.multiplex",
+"type.multiplex",
+"varianceDegree.multiplex"
+)
+
+importFrom("igraph", degree)
+importFrom("igraph", degree.distribution)
+importFrom("igraph", graph.adjacency)
+importFrom("igraph", graph.density)
+importFrom("igraph", transitivity)

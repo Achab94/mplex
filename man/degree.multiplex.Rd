@@ -22,41 +22,34 @@
   Default is \code{FALSE}. If \code{TRUE}, the function evaluates 'in-degree' and 'out-degree' besides the usual 'total-degree' descriptor, for directed (intra)layers of the multiplex network.
   }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A list with, for each (intra)layer, a vector of degrees for the nodes selected with the \code{indexNode} argument. If \code{modeDirected = TRUE}, it adds a list with 'in-degree' and 'out-degree' besides 'total degree' in the directed (intra)layers' position inside the output.
 }
 \references{
-Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478 
+Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
 }
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link{degree}{igraph}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -68,22 +61,24 @@ degree.multiplex(mplexObj)
 
 degree.multiplex(mplexObj, indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10))
 
-# Supposing one (or more) layers of the multiplex network have a directed relationship (for 
-# example, the third), we can obtain both the in-degree, out-degree and total-degree measures # using the option 'modeDirected = TRUE':
+# Supposing one (or more) layers of the multiplex network have a directed relationship (for
+# example, the third), we can obtain both the in-degree, out-degree and total-degree measures
+# using the option 'modeDirected = TRUE':
 
 # 1) Creating the multiplex network with a directed relationship (coauthor, L3)
-mplexObjDirected <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                                    layersNames = aarhus_mplex$layerNames, 
-                                    layer1 = aarhus_mplex$L1, 
-                                    type1 = "undirected", 
-                                    aarhus_mplex$L2, 
+mplexObjDirected <- create.multiplex(nodes = aarhus_mplex$nodes,
+                                    layersNames = aarhus_mplex$layerNames,
+                                    layer1 = aarhus_mplex$L1,
+                                    type1 = "undirected",
+                                    aarhus_mplex$L2,
                                     aarhus_mplex$L3,
                                     "directed",
-                                    aarhus_mplex$L4, 
+                                    aarhus_mplex$L4,
                                     aarhus_mplex$L5
                                     )
 
-# 2) Using the 'modeDirected = TRUE' option. Note the output and the list nested in $coauthor argument, containing the 3 measures:
+# 2) Using the 'modeDirected = TRUE' option. Note the output and the list
+# nested in $coauthor argument, containing the 3 measures:
 
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)$coauthor

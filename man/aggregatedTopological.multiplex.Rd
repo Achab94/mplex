@@ -5,10 +5,13 @@
   Aggregated topological matrix of the multiplex network
 }
 \description{
-Creates the so-called \emph{aggregated topological matrix} of the multiplex network (see References for further information). This matrix is mostly used to see if one tie exists between two different nodes (eventually selected with the \code{\link{indexNode}} argument) in at least one (intra)layer of the multiplex network (eventually selected with the \code{indexLayer} argument).
+Creates the so-called \emph{aggregated topological matrix} of the multiplex network (see References for further information). This matrix is mostly used to see if one tie exists between two different nodes (eventually selected with the \code{indexNode} argument) in at least one (intra)layer of the multiplex network (eventually selected with the \code{indexLayer} argument).
 }
 \usage{
-aggregatedTopological.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE)
+aggregatedTopological.multiplex(obj,
+                                indexNode = 1:length(nodes.multiplex(obj)),
+                                indexLayer = 1:length(layers.multiplex(obj)),
+                                verbose = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -25,9 +28,7 @@ aggregatedTopological.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)),
   Default is \code{FALSE}. If \code{TRUE}, the function prints on console the names of the layers used to create the aggregated topological matrix.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 A N x N \code{matrix}, the so-called aggregated topological matrix, where N is the number of nodes of the network.
 }

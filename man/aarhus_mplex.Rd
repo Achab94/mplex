@@ -22,16 +22,12 @@
     \item{$L5: a \code{data.frame} object with the edges of the fifth relationship (work) considered.}
   }
 }
-\details{
-%%  ~~ If necessary, more details than the __description__ above ~~
-}
+
 \source{
  The original dataset is publicly available at \url{http://deim.urv.cat/~manlio.dedomenico/data/CS-Aarhus_Multiplex_Social.zip}.
  See \url{http://larica.uniurb.it/sigsna/data/} for further details.
 }
-\references{
-%%  ~~ possibly secondary sources and usages ~~
-}
+
 \examples{
 data(aarhus_mplex)
 # Loads the dataset into the current environment.

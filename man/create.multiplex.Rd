@@ -28,9 +28,7 @@
   This argument allows to input any other layer belonging to the multiplex network, in the same structure as \code{layer1} argument. It also allows to specify the types of relationships of the layer (as in \code{type1} argument), just after the layer's structure. If it is not specified, the relationship is assumed to be \emph{undirected}.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A list of the following objects, which will be useful in all the other functions developed in this package:
   \item{nodes}{
@@ -58,15 +56,7 @@ De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.
 \author{
 Emanuele Degani \email{emanuele.degani@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-}
 \section{Warning }{
   It is suggested to specify \code{layersNames = FALSE} argument even if no vector of layers names is given in input. If not, execution could cause problem/errors.
 }

@@ -25,16 +25,11 @@
 \references{
 De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
 
-Kivelä, M. et al (2014). \emph{Multilayer Networks.} http://doi.org/10.1093/comnet/cnu016
+Kivela, M. et al (2014). \emph{Multilayer Networks.} http://doi.org/10.1093/comnet/cnu016
 }
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}

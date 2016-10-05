@@ -8,7 +8,11 @@
   This function calculates the total degrees (as a sum of the degrees on the single layers) of the multiplex network.
 }
 \usage{
-  totalDegree.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = TRUE)
+  totalDegree.multiplex(obj,
+                        indexNode = 1:length(nodes.multiplex(obj)),
+                        indexLayer = 1:length(layers.multiplex(obj)),
+                        verbose = FALSE
+                        )
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,9 +30,7 @@
   }
 }
 
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A numeric \code{vector}: each cell contains the total degree for a specific node of the multiplex network.
 }
@@ -38,11 +40,6 @@ Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/1
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link{degree.multiplex}}
