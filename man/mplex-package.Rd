@@ -25,8 +25,9 @@ Other functions such as \code{\link{degree.multiplex}}, \code{\link{meanDegree.m
 
 Functions such as \code{\link{supraAdjacency.multiplex}} or \code{\link{aggregatedOverlapping.multiplex}} performs some basic transformation of the network into particular structures which can be sometimes useful for having a first-approach visualization of the multiplex network, such as the so-called Supra-adjacency matrix, or the Aggregated Overlapping matrix.
 
-Multiplex-specific functions are provided for computing some of the most widespread clustering and centrality measures strictly defined for multiplex networks. In this sense, some centrality measures are calculated using \code{\link{degreeCentrality.multiplex}}, \code{\link{supraEigenvectorCentrality.multiplex}} or \code{\link{heterEigenvectorCentrality.multiplex}}; clustering indices can be computed instead using functions such as \code{\link{c1Local.multiplex}}, \code{\link{C2Global.multiplex}}
-} or \code{\link{globalOverlayClustering.multiplex}}.
+Multiplex-specific functions are provided for computing some of the most widespread clustering and centrality measures strictly defined for multiplex networks. In this sense, some centrality measures are calculated using \code{\link{degreeCentrality.multiplex}}, \code{\link{supraEigenvectorCentrality.multiplex}} or \code{\link{heterEigenvectorCentrality.multiplex}}; clustering indices can be computed instead using functions such as \code{\link{c1Local.multiplex}}, \code{\link{C2Global.multiplex}} or \code{\link{globalOverlayClustering.multiplex}}.
+}
+
 \author{
 Emanuele Degani
 
