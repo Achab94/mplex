@@ -13,7 +13,7 @@ adjacency.multiplex(obj, index = 1:length(obj$adjacency))
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{obj}{
-  An object of class \code{multiplex}.
+  An object of class \samp{multiplex}.
 }
   \item{index}{
    A vector of the layers' IDs selected for the extraction of their relative adjacency matrices. By default, the vector contains the IDs of all the layers of the network.
@@ -23,7 +23,7 @@ adjacency.multiplex(obj, index = 1:length(obj$adjacency))
 %%  ~~ If necessary, more details than the description above ~~
 }
 \value{
-  A \code{list} having the adjacency matrices of the selected layers as components.
+  A \samp{list} having the adjacency matrices of the selected layers as components.
 }
 \references{
 %% ~put references to the literature/web site here ~
@@ -38,22 +38,23 @@ Emanuele Degani \email{emanuele.achab@gmail.com}
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{create.multiplex}}}, \code{\link{add.interlayer.multiplex}}
+\code{\link{create.multiplex}}, \code{\link{add.interlayer.multiplex}}
+}
 
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
