@@ -40,11 +40,6 @@ supraEigenvectorCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(o
 \author{
   Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link{supraAdjacency.multiplex}}

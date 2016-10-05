@@ -25,9 +25,7 @@ aggregatedTopological.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)),
   Default is \code{FALSE}. If \code{TRUE}, the function prints on console the names of the layers used to create the aggregated topological matrix.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 A N x N \code{matrix}, the so-called aggregated topological matrix, where N is the number of nodes of the network.
 }

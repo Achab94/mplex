@@ -26,9 +26,7 @@
   }
 }
 
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A numeric \code{vector}: each cell contains the total degree for a specific node of the multiplex network.
 }
@@ -38,11 +36,6 @@ Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/1
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link{degree.multiplex}}

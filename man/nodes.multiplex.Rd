@@ -22,23 +22,13 @@ nodes.multiplex(obj, index = 1:nrow(obj$nodes), label = FALSE)
   \code{FALSE} by default. If \code{TRUE}, the function extracts only the labels of the selected  nodes.
   }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 A \code{vector} with the nodes selected by the \code{index} argument.
-}
-\references{
-%% ~put references to the literature/web site here ~
 }
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}

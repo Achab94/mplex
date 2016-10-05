@@ -25,23 +25,17 @@ aggregatedOverlapping.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)),
   Default is \code{FALSE}. If \code{TRUE}, the functions prints on console the names of the layers used to create the overlapped adjacency matrix.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
 A N x N \code{matrix}, the so-called overlapped adjacency matrix, where N is the number of nodes of the network. It is simply obtained summing all the adjacency matrices of the selected (intra)layers of the multiplex network.
 }
 \references{
 De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
 }
+
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}

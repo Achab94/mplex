@@ -19,23 +19,15 @@ adjacency.multiplex(obj, index = 1:length(obj$adjacency))
    A vector of the layers' IDs selected for the extraction of their relative adjacency matrices. By default, the vector contains the IDs of all the layers of the network.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A \samp{list} having the adjacency matrices of the selected layers as components.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link{add.interlayer.multiplex}}

@@ -19,23 +19,14 @@
   A vector of the layers' IDs selected for the extraction of their relative relationship type string. By default, the vector contains the IDs of all the layers of the network.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A \code{vector} with the layers' relationship type \code{strings} selected by the \code{index} argument.
 }
-\references{
-%% ~put references to the literature/web site here ~
-}
+
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
   \code{\link{create.multiplex}}

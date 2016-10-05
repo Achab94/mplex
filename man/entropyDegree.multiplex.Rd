@@ -37,11 +37,6 @@ Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http:
 \author{
   Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link{aggregatedOverlapping.multiplex}}, \code{\link[igraph]{degree}}

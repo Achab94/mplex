@@ -22,9 +22,7 @@ meanDegree.multiplex(obj, indexNodeMean = 1:length(nodes.multiplex(obj)), verbos
   Default is \code{FALSE}. If \code{TRUE}, the function prints on console the name of the selected nodes on which the means are evaluated.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A \code{list} containing the means of the degrees for each (intra)layer of the multiplex network.
 }
@@ -34,11 +32,6 @@ meanDegree.multiplex(obj, indexNodeMean = 1:length(nodes.multiplex(obj)), verbos
 \author{
   Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
   \code{\link{create.multiplex}}, \code{\link{degree.multiplex}}

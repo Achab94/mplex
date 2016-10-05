@@ -22,9 +22,7 @@ interlayer.multiplex(obj, level1, level2)
   The ID (or name) of the second layer.
 }
 }
-\details{
-  
-}
+
 \value{
   A N*N \code{matrix} with the interlayer (adjacency) matrix between the selected levels, where N is the number of nodes of the multiplex network.
 }
@@ -32,40 +30,38 @@ interlayer.multiplex(obj, level1, level2)
 De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
 
 
-Kivelä, M. et al (2014). \emph{Multilayer Networks.} http://doi.org/10.1093/comnet/cnu016
+Kivela, M. et al (2014). \emph{Multilayer Networks.} http://doi.org/10.1093/comnet/cnu016
 }
 
 \author{
 Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
+
 \section{Warning }{If arguments \code{level1} = \code{level2}, the function can't perform. In fact, the interlayer matrix between the same level is called \emph{intralayer matrix} and it can be extracted with the \code{adjacency.multiplex} function.}
-%% ~Make other sections like Warning with \section{Warning }{....} ~
+
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link{adjacency.multiplex}}
 }
 
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
-# Extracting the interlayer adjacency matrix referred to the interlayer 
+# Extracting the interlayer adjacency matrix referred to the interlayer
 # relationship between (for example) layer 1 and layer 4.
 # Note that all the entries outside the diagonal are 0s (that's consistent
 # with the definition of multiplex network) and that not all the entries of the diagonal are 1s.

@@ -22,9 +22,7 @@ globalOverlayClustering.multiplex(obj, indexLayer = 1:length(layers.multiplex(ob
   Default is \code{FALSE}. If \code{TRUE}, it prints on console the value of the standardizing coefficient of the index.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A number, the global overlay clustering coefficient.
 }
@@ -34,11 +32,6 @@ globalOverlayClustering.multiplex(obj, indexLayer = 1:length(layers.multiplex(ob
 \author{
   Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
   \code{\link{create.multiplex}}

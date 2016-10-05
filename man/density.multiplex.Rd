@@ -16,9 +16,7 @@ density.multiplex(multiplex)
   An object of class \code{multiplex}.
   }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A \code{list} containing the densities of the degrees for each (intra)layer of the multiplex network.
 }
@@ -28,11 +26,6 @@ density.multiplex(multiplex)
 \author{
   Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
 \code{\link{create.multiplex}}, \code{\link[igraph]{density}}}

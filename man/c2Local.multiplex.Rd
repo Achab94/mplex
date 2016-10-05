@@ -22,9 +22,7 @@ c2Local.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 
   A vector of IDs (or labels) for the selected (intra)layers on which to calculate the C2 local clustering coefficient.
 }
 }
-\details{
 
-}
 \section{Warnings }{
   Note that the C2 local clustering coefficient can be defined for a multiplex network with, at least, 3 (intra)layers. So, if \code{indexLayer} argument has length <3, the function produces a warning in console.
 }
@@ -37,11 +35,6 @@ c2Local.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 
 \author{
   Emanuele Degani \email{emanuele.degani@studenti.unipd.it}
 }
-\note{
-%%  ~~further notes~~
-}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
   \code{\link{create.multiplex}}, \code{\link{C2Global.multiplex}}

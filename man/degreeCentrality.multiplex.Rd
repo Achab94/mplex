@@ -19,9 +19,7 @@ degreeCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))
   A vector of IDs (or labels) for the selected nodes on which to calculate the \emph{multiplex degree centrality} coefficients.
 }
 }
-\details{
-%%  ~~ If necessary, more details than the description above ~~
-}
+
 \value{
   A numerical \code{vector} with all the multiplex degree centrality index for the nodes of the network (eventually selected with \code{indexNode} argument).
 }
@@ -31,29 +29,25 @@ degreeCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))
 \author{
   Emanuele Degani \email{emanuele.achab@gmail.com}
 }
-\note{
-%%  ~~further notes~~
-}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
   \code{\link{create.multiplex}}, \code{\link{aggregatedOverlapping.multiplex}}
 }
 \examples{
-# Loading Aarhus CS Department dataset. 
+# Loading Aarhus CS Department dataset.
 
 data(aarhus_mplex)
 
 # Creating the multiplex object using the dataset loaded into aarhus_mplex object.
 
-mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes, 
-                            layersNames = aarhus_mplex$layerNames, 
-                            layer1 = aarhus_mplex$L1, 
-                            type1 = "undirected", 
-                            aarhus_mplex$L2, 
-                            aarhus_mplex$L3, 
-                            aarhus_mplex$L4, 
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
                             aarhus_mplex$L5
                             )
 
@@ -64,7 +58,7 @@ degreeCentrality.multiplex(mplexObj)
 # It could be useful to calculate this coefficient only on some selected nodes of the network.
 # It can be done using the 'indexNode' argument and selecting the appropriate ID of the nodes:
 
-degreeCentrality.multiplex(mplexObj, 
+degreeCentrality.multiplex(mplexObj,
                           indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10)
                           )
 }
