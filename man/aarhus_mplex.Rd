@@ -30,14 +30,13 @@
 
 \examples{
 data(aarhus_mplex)
-# Loads the dataset into the current environment.
 
 head(aarhus_mplex$nodes)
-# data.frame object with information about the node (employees) of the multiplex network.
+# data.frame object with information about the employees of the network.
 # We see, for example, that employee named 'U33' has number 3 as univoque ID.
 
 aarhus_mplex$layerNames
-# list object with characters describing the layers (relationships) taken into consideration
+# list object with characters describing the relationships taken into consideration
 # in the multiplex network.
 
 head(aarhus_mplex$L3)

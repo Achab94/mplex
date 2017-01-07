@@ -43,4 +43,3 @@ Kivela, M. et al (2014). \emph{Multilayer Networks.} J. Complex Network. 2(3): 2
 \seealso{
 \code{\link{create.multiplex}}
 }
-
