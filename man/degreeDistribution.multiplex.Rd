@@ -22,10 +22,7 @@ Degrees' distribution shows, for each (intra)layer of the network, the maximum d
   A list with, for each (intra)layer, the degrees' distribution.
 }
 \references{
-  Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+Wassermann and Faust (1994), \emph{Social network analysis.} Cambridge University Press.
 }
 
 \seealso{

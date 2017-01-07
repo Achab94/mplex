@@ -30,10 +30,7 @@ globalOverlayClustering.multiplex(obj,
   A number, the global overlay clustering coefficient.
 }
 \references{
-  De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 }
 
 \seealso{

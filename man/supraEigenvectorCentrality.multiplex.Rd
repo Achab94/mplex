@@ -5,7 +5,7 @@
   Multiplex eigenvector centrality indices of the multiplex network
 }
 \description{
-  This function calculates the \emph{multiplex eigenvector centrality} indices of the multiplex network, for each of its (inter)layers. The operation is conducted calculating the eigenvector referred to the maximum (in absolute value) eigenvalue of the \emph{supra adjacency matrix} of the multiplex network, obtained with the \code{supra.adjacency.multiplex} function. Defined N the number of nodes and L the number of (inter)layers of the multiplex network, the supra-adjacency matrix is N*L x N*L, thus the eigenvector has length N*L. The L vectors given in output are simply obtained breaking the N*L eigenvector into L vectors, each of length N and referred to the multiplex eigenvector centrality measures of the nodes (eventually selected with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.
+  This function calculates the \emph{multiplex eigenvector centrality} indices of the multiplex network, for each of its (inter)layers.
 }
 \usage{
 supraEigenvectorCentrality.multiplex(obj,
@@ -26,16 +26,14 @@ supraEigenvectorCentrality.multiplex(obj,
 
 }
 \details{
-Irreducibility is a needed hypotesy to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosicated to the maximum eigenvalue of the supra adjacency matrix of the multiplex network; nevertheless, results are usually good even if it is not strictly satisfied.
+The operation is conducted calculating the eigenvector referred to the maximum (in absolute value) eigenvalue of the \emph{supra adjacency matrix} of the multiplex network, obtained with the \code{supra.adjacency.multiplex} function. Defined N the number of nodes and L the number of (inter)layers of the multiplex network, the supra-adjacency matrix is N*L x N*L, thus the eigenvector has length N*L. The L vectors given in output are simply obtained breaking the N*L eigenvector into L vectors, each of length N and referred to the multiplex eigenvector centrality measures of the nodes (eventually selected with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.
+Irreducibility is a required assumption to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosicated to the maximum eigenvalue of the supra adjacency matrix of the multiplex network; nevertheless, results are usually good even if it is not strictly satisfied.
 }
 \value{
   A \code{list} with the L vectors of the multiplex eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument).
 }
 \references{
-  De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 }
 
 \seealso{
@@ -64,12 +62,12 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 supraEigenvectorCentrality.multiplex(mplexObj)
 round(supraEigenvectorCentrality.multiplex(mplexObj), 5)
 
-# It can also be possible to select the IDs of the nodes on which to calculate the index,
+# It can also be possible to select the first 10 IDs of the nodes on which to calculate the index,
 # using 'indexNode' argument as in this case:
 
 round(
 supraEigenvectorCentrality.multiplex(mplexObj,
-                            indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10))
+                            indexNode = 1:10)
      , 5)
 
 # Another way to visualize the results is to consider the standardized measures. In this case,

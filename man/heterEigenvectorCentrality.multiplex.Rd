@@ -31,16 +31,13 @@ heterEigenvectorCentrality.multiplex(obj,
 
 }
 \details{
-Irreducibility is a needed hypotesy to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosicated to the maximum eigenvalue of the supra adjacency matrix of the multiplex network; nevertheless, results are usually good even if it is not strictly satisfied.
+Irreducibility is a required assumption to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosicated to the maximum eigenvalue of the supra adjacency matrix of the multiplex network; nevertheless, results are usually good even if it is not strictly satisfied.
 }
 \value{
 A \code{list} with the L vectors of the multiplex heterogeneous eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument), where L is the number of layers of the multiplex network.
 }
 \references{
-  Sola' et al. (2013) \emph{Eigenvector centrality of nodes in multiplex networks.} http://doi.org/10.1063/1.4818544
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+  Sola' et al. (2013) \emph{Eigenvector centrality of nodes in multiplex networks.} Chaos Volume 23, Issue 3.
 }
 
 \seealso{

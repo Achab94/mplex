@@ -5,7 +5,7 @@
   C1 global clustering coefficients for multiplex networks
 }
 \description{
-  Calculates Battiston et al.(2014)'s \emph{C1} global clustering coefficient of a multiplex network. Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index accounts for all the possible tradic structures that take form considering interlayers relationships. The index is defined as the ratio between the number of 2-triangles of the multiplex network, and (L - 1) times the number of 1-triads of the multiplex network, where L is the number of layers.
+  Computes Battiston et al.(2014)'s \emph{C1} global clustering coefficient of a multiplex network. Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index accounts for all the possible tradic structures that take form considering interlayers relationships. The index is defined as the ratio between the number of 2-triangles of the multiplex network, and (L - 1) times the number of 1-triads of the multiplex network, where L is the number of layers.
 }
 \usage{
 C1Global.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)))
@@ -21,18 +21,16 @@ C1Global.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)))
 }
 
 \section{Warnings }{
-  Note that the C1 global clustering coefficient can be defined for a multiplex network with, at least, 2 (intra)layers. So, if \code{indexLayer} argument has length 1, the function produces a warning in console.
+  Note that the C1 global clustering coefficient can be defined for a multiplex network with, at least, 2 (intra)layers. So, if \code{indexLayer} argument has length 1, the function produces an error and halts.
 }
 
 \value{
   A vector of length one and value corresponding to the C1 global clustering coefficient.
 }
 \references{
-  Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http://dx.doi.org/10.1103/PhysRevE.89.032804
+Battiston et al. (2014) \emph{Structural measures for multiplex networks.} Phys. Rev. E 89, 032804.
 }
-\author{
-  Emanuele Degani \email{emanuele.degani@gmail.com}
-}
+
 
 \seealso{
   \code{\link{create.multiplex}}, \code{\link{c1Local.multiplex}}
@@ -54,7 +52,7 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
                             aarhus_mplex$L5
                             )
 
-# Calculating the so-called C1 global clustering index for the nodes of the multiplex network:
+# Computing the so-called C1 global clustering index for the nodes of the multiplex network:
 
 C1Global.multiplex(mplexObj)
 

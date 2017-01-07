@@ -27,10 +27,6 @@ layers.multiplex(obj, index = 1:length(obj$layers), label = FALSE)
   A \code{list} with the layers' \code{data.frame} structures selected by the \code{index} argument.
 }
 
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
-}
-
 \seealso{
 \code{\link{create.multiplex}}
 }

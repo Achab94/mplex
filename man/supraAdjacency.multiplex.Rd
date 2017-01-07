@@ -23,12 +23,9 @@
   A N*L x N*L \code{matrix}, composed as described in 'Details', where N is the number of nodes and L the number of layers of the network.
 }
 \references{
-De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 
-Kivela, M. et al (2014). \emph{Multilayer Networks.} http://doi.org/10.1093/comnet/cnu016
-}
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
+Kivela, M. et al (2014). \emph{Multilayer Networks.} J. Complex Network. 2(3): 203-271.
 }
 
 \seealso{

@@ -30,10 +30,7 @@ varianceDegree.multiplex(obj,
   A \code{list} containing the variances of the degrees for each (intra)layer of the multiplex network.
 }
 \references{
-  Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+Wassermann and Faust (1994), \emph{Social network analysis.} Cambridge University Press.
 }
 
 \seealso{
@@ -62,16 +59,12 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 varianceDegree.multiplex(mplexObj)
 
-# Calculating the variance degrees selecting 10 employees randomly on which to execute
-# the calculation:
+# Calculating the variance degrees for the first 10 employees:
 
-varianceDegree.multiplex(mplexObj, indexNodeVar = sample(1:length(nodes.multiplex(mplexObj)), 10))
+varianceDegree.multiplex(mplexObj, indexNodeVar = 1:10)
 
 # Using the 'verbose = TRUE' option, the function prints the name of the nodes on which the variance
 # degree is performed:
 
-varianceDegree.multiplex(mplexObj,
-                        indexNodeVar = sample(1:length(nodes.multiplex(mplexObj)), 10),
-                        verbose = TRUE
-                        )
+varianceDegree.multiplex(mplexObj, indexNodeVar = 1:10, verbose = TRUE)
 }

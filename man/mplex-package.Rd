@@ -35,9 +35,9 @@ Maintainer: Emanuele Degani <emanuele.achab@gmail.com>
 }
 \references{
 
-De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 
-Kivela, M. et al (2014). \emph{Multilayer Networks.} J. Complex Network. 2(3): 203-271
+Kivela, M. et al (2014). \emph{Multilayer Networks.} J. Complex Network. 2(3): 203-271.
 }
 \keyword{ package }
 \seealso{

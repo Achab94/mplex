@@ -26,10 +26,7 @@ localClustering.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))
   A \code{list} of numerical \code{vectors}, each with the local clustering coefficients of the nodes (eventually selecte with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.
 }
 \references{
-  Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+Wassermann and Faust (1994), \emph{Social network analysis.} Cambridge University Press.
 }
 
 \seealso{
@@ -60,6 +57,6 @@ localClustering.multiplex(mplexObj)
 # Nodes can be eventually selected using the 'indexNode' argument:
 
 localClustering.multiplex(mplexObj,
-                          indexNode = sample(1:length(nodes.multiplex(mplexObj)) , 10)
+                          indexNode = 1:10
                           )
 }

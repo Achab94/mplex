@@ -30,15 +30,11 @@
   }
 }
 
-
 \value{
   A numeric \code{vector}: each cell contains the total degree for a specific node of the multiplex network.
 }
 \references{
-Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
-}
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
+Wassermann and Faust (1994), \emph{Social network analysis.} Cambridge University Press.
 }
 
 \seealso{
@@ -65,12 +61,12 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 totalDegree.multiplex(mplexObj)
 
-# Calculating the total degrees for 10 employees randomly choosen. Note the 'verbose = TRUE'
+# Calculating the total degrees for the first 10 employees. Note the 'verbose = TRUE'
 # option that prints on console the names of the layers used (they can eventually be selected
 # with the 'indexLayer' argument):
 
 totalDegree.multiplex(mplexObj,
-                      indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10),
+                      indexNode = 1:10,
                       verbose = TRUE
                       )
 }

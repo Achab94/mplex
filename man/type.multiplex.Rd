@@ -24,10 +24,6 @@
   A \code{vector} with the layers' relationship type \code{strings} selected by the \code{index} argument.
 }
 
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
-}
-
 \seealso{
   \code{\link{create.multiplex}}
 }

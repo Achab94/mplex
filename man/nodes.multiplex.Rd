@@ -26,9 +26,6 @@ nodes.multiplex(obj, index = 1:nrow(obj$nodes), label = FALSE)
 \value{
 A \code{vector} with the nodes selected by the \code{index} argument.
 }
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
-}
 
 \seealso{
 \code{\link{create.multiplex}}
