@@ -687,38 +687,12 @@ degreeCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex
   return(out[indexNode])
 }
 
-
-supraEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), rowStand = TRUE, testIrreducibility = FALSE, maxPower = 100){
+supraEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), rowStand = TRUE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   supraMatrix <- supraAdjacency.multiplex(obj) # Supra adjacency matrix
   N <- length(nodes.multiplex(obj))
   L <- length(layers.multiplex(obj))
-
-  if(testIrreducibility){
-  ########## TESTING OF IRREDUCIBILITY FOR PERRON-FROBENIUS'S THM ##########
-    irreducible <- function(matrix, maxP){
-      Mstart <- matrix
-      m <- 1
-      M <- Mstart
-      repeat{
-        M <- M %*% Mstart
-        m <- m + 1
-  #     print(m)
-        if(sum((M == matrix(0, nrow(Mstart), ncol(Mstart)))) == 0){
-          return(TRUE)
-        }
-        if(m == maxP){
-          return(list(FALSE, m))
-        }
-      }
-    }
-
-    if(!(irreducible(matrix = supraMatrix, maxP = maxPower)[[1]])){
-      cat("WARNING:", irreducible(matrix = supraMatrix, maxP = maxPower)[[2]], "iterations have been performed, and irreducibility for the Perron-Frobenius Theorem is not guaranteed.\n")
-    }
-  #################################################################################
-  }
 
   supraEigenvector <- eigen(supraMatrix)$vectors[,1]
 
@@ -735,8 +709,7 @@ supraEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
 }
 
 
-
-heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), W = matrix(1, length(layers.multiplex(obj)), length(layers.multiplex(obj))), rowStand = TRUE, testIrreducibility = FALSE, maxPower = 100){
+heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), W = matrix(1, length(layers.multiplex(obj)), length(layers.multiplex(obj))), rowStand = TRUE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   N <- length(nodes.multiplex(obj))
@@ -747,36 +720,11 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   adjTransposeBlockVectorMatrix <- do.call(rbind, replicate(L, adjTransposeBlockVector, simplify = FALSE))
   perronMatrix <- kronecker(W, matrix(1, N, N)) * adjTransposeBlockVectorMatrix
 
-  if(testIrreducibility){
-    ########## TESTING OF IRREDUCIBILITY FOR PERRON-FROBENIUS'S THM ##########
-    irreducible <- function(matrix, maxP){
-      Mstart <- matrix
-      m <- 1
-      M <- Mstart
-      repeat{
-        M <- M %*% Mstart
-        m <- m + 1
-        if(sum((M == matrix(0, nrow(Mstart), ncol(Mstart)))) == 0){
-          return(TRUE)
-        }
-        if(m == maxP){
-          return(list(FALSE, m))
-        }
-      }
-    }
-
-    if(!(irreducible(perronMatrix, maxP = maxPower)[[1]])){
-      cat("WARNING:", irreducible(perronMatrix, maxP = maxPower)[[2]], "iterations have been performed, and irreducibility for the Perron-Frobenius Theorem is not guaranteed.\n")
-    }
-  #################################################################################
-  }
-
   perronEigenvector <- eigen(perronMatrix)$vectors[,1]
 
   outMatrix <- matrix(perronEigenvector, nrow = L, ncol = N, byrow = T)
   rownames(outMatrix) <- layers.multiplex(obj, label = T)
   colnames(outMatrix) <- nodes.multiplex(obj, label = T)
-
 
   if(rowStand){
     outMatrix <- t(apply(outMatrix, 1, function(row) row/sum(row)))
