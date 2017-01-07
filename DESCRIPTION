@@ -8,7 +8,7 @@ Imports: igraph
 Maintainer: Emanuele Degani <emanuele.achab@gmail.com>
 Description: This package allows to implement multiplex networks into the R framework. Multiplex networks are networks composed of a multiplicity of overlapping nets that 
 capture the different types of connection between nodes within the network, taking into account both relationships within a same layer and relationships between a same
-node located in different layers of the overall network..
+node located in different layers of the overall network.
 Some of the most common descriptors, clustering indices and centrality measures can be calculated starting from a set of nodes and layers given in input by the user.
 License: GPL (>=2)
 URL: https://github.com/Achab94/mplex
