@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2017-01-07
 Author: Emanuele Degani
 Imports:
-    igraph
+    igraph, graphics, stats, utils
 Maintainer: Emanuele Degani <emanuele.achab@gmail.com>
 Description: This package allows to implement multiplex networks into the
     R framework. Multiplex networks are networks composed of a multiplicity of
