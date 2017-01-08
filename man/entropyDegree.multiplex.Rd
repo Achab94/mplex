@@ -65,7 +65,7 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 entropyDegree.multiplex(mplexObj)
 
 # Using the 'display = TRUE' option we see that quite all the nodes have an entropy
-measure > 0.80: this mean that they have a similar degree in all the intralayer of the network.
+# measure > 0.80: this mean that they have a similar degree in all the intralayer of the network.
 
 entropyDegree.multiplex(mplexObj, display = TRUE)
 
