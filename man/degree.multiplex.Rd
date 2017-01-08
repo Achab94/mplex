@@ -56,7 +56,7 @@ degree.multiplex(mplexObj)
 
 # Refining the evaluation only on 10 employees chosen, for each layer:
 
-degree.multiplex(mplexObj, indexNode = 1:10, 10))
+degree.multiplex(mplexObj, indexNode = 1:10, 10)
 
 # Supposing one (or more) layers of the multiplex network have a directed relationship (for
 # example, the third), we can obtain both the in-degree, out-degree and total-degree measures
