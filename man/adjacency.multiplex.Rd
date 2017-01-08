@@ -59,4 +59,5 @@ adjacency.multiplex(mplexObj, index = 1)
 adjacency.multiplex(mplexObj, index = "lunch")
 }
 
-\keyword{network, multiplex}
+\keyword{network}
+\keyword{multiplex}

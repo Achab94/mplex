@@ -81,4 +81,5 @@ degree.multiplex(mplexObjDirected, modeDirected = TRUE)
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)$coauthor
 }
 
-\keyword{network, multiplex}
+\keyword{network}
+\keyword{multiplex}

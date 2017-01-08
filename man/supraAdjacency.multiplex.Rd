@@ -53,4 +53,5 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 supraAdjacency.multiplex(mplexObj)
 }
 
-\keyword{network, multiplex}
+\keyword{network}
+\keyword{multiplex}

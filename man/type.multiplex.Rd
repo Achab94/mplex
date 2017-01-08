@@ -53,4 +53,5 @@ type.multiplex(mplexObj)
 type.multiplex(mplexObj, index = c("leisure", "facebook"))
 }
 
-\keyword{network, multiplex}
+\keyword{network}
+\keyword{multiplex}

@@ -44,4 +44,5 @@ head(aarhus_mplex$L3)
 # We see, for example, that employees with IDs 18 and 46 are linked into a coautorship
 # relation in CS Aarhus Department.
 }
+
 \keyword{datasets}

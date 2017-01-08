@@ -68,4 +68,5 @@ globalOverlayClustering.multiplex(mplexObj, indexLayer = c(1, 2))
 globalOverlayClustering.multiplex(mplexObj, verbose = TRUE)
 }
 
-\keyword{network, multiplex}
+\keyword{network}
+\keyword{multiplex}

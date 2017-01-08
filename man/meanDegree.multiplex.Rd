@@ -68,4 +68,5 @@ meanDegree.multiplex(mplexObj, indexNodeMean = 1:10)
 meanDegree.multiplex(mplexObj, indexNodeMean = 1:10, verbose = TRUE)
 }
 
-\keyword{network, multiplex}
+\keyword{network}
+\keyword{multiplex}

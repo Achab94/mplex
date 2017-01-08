@@ -43,4 +43,6 @@ Kivela, M. et al (2014). \emph{Multilayer Networks.} J. Complex Network. 2(3): 2
 \code{\link{create.multiplex}}
 }
 
-\keyword{network, multiplex, package}
+\keyword{package}
+\keyword{network}
+\keyword{multiplex}

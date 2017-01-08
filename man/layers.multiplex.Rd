@@ -65,4 +65,5 @@ layers.multiplex(mplexObj, index = c("facebook", "coauthor"))
 layers.multiplex(mplexObj, index = c(2, 4), label = TRUE)
 }
 
-\keyword{network, multiplex}
+\keyword{network}
+\keyword{multiplex}
