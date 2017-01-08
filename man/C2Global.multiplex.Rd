@@ -32,7 +32,7 @@ Function use \emph{permutations()} function from \emph{gtools} package. More inf
 \references{
 Battiston et al. (2014) \emph{Structural measures for multiplex networks.} Phys. Rev. E 89, 032804.
 }
-}
+
 
 \seealso{
   \code{\link{create.multiplex}}, \code{\link{c2Local.multiplex}}
