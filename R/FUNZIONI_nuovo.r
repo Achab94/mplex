@@ -364,10 +364,10 @@ aggregatedOverlapping.multiplex <- function(obj, indexNode = 1:length(nodes.mult
 
   if(verbose){
     if(length(indexLayer) == 1){
-      cat("Matrice ottenuta con il solo livello", layers.multiplex(obj, label = T)[indexLayer],".\n")
+      cat("Matrix obtained with level", layers.multiplex(obj, label = T)[indexLayer],".\n")
     }
     else{
-      cat("Matrice ottenuta con i livelli", layers.multiplex(obj, label = T)[indexLayer],".\n")
+      cat("Matrix obtained with levels", layers.multiplex(obj, label = T)[indexLayer],".\n")
     }
   }
   return(A)
@@ -420,7 +420,7 @@ entropyDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(ob
 
   H <- function(row){
     last <- length(row)
-    return(-sum((row[-last]/row[last]) * log((row[-last] + 0.001)/row[last]))) # Correction +0.5
+    return(-sum((row[-last]/row[last]) * log((row[-last] + 0.001)/row[last]))) # Correction +0.001
   }
 
   tab <- cbind(simplify2array(degree.multiplex(obj))[, indexOverlappingLayer], degreesOverlapped)
@@ -527,7 +527,6 @@ permutations <- function(n, r, v = 1:n, set = TRUE, repeats.allowed=FALSE){
 
   sub(n, r, v[1:n])
 }
-
 
 
 c1Local.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj))){

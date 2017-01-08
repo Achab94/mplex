@@ -29,6 +29,9 @@ c1Local.multiplex(obj,
 \section{Warnings }{
   Note that the C1 local clustering coefficient can be defined for a multiplex network with, at least, 2 (intra)layers. So, if \code{indexLayer} argument has length 1, the function produces an error and halts.
 }
+\details{
+Function use \emph{permutations()} function from \emph{gtools} package. More informations available at \url{https://cran.r-project.org/web/packages/gtools/index.html}.
+}
 \value{
   A numerical \code{vector} with all the C1 local clustering coefficients for the nodes selected in \code{indexNode} argument.
 }
