@@ -60,3 +60,5 @@ localClustering.multiplex(mplexObj,
                           indexNode = 1:10
                           )
 }
+
+\keyword{network, multiplex}

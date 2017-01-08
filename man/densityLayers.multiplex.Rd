@@ -51,3 +51,5 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 densityLayers.multiplex(mplexObj)
 
 }
+
+\keyword{network, multiplex}

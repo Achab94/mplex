@@ -61,3 +61,5 @@ C2Global.multiplex(mplexObj)
 
 C2Global.multiplex(mplexObj, indexLayer = c(1, 2, 3))
 }
+
+\keyword{network, multiplex}

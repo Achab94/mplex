@@ -68,3 +68,5 @@ diag(interlayer.multiplex(mplexObj, level1 = 1, level2 = 4))
 
 # interlayer.multiplex(mplexObj, 3, 3)
 }
+
+\keyword{network, multiplex}

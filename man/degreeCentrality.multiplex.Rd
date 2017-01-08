@@ -58,3 +58,5 @@ degreeCentrality.multiplex(mplexObj,
                           indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10)
                           )
 }
+
+\keyword{network, multiplex}

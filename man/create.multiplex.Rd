@@ -81,3 +81,5 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 str(mplexObj)
 }
+
+\keyword{network, multiplex}

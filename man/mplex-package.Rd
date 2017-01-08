@@ -39,7 +39,8 @@ De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.
 
 Kivela, M. et al (2014). \emph{Multilayer Networks.} J. Complex Network. 2(3): 203-271.
 }
-\keyword{ package }
 \seealso{
 \code{\link{create.multiplex}}
 }
+
+\keyword{network, multiplex, package}

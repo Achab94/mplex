@@ -57,3 +57,5 @@ nodes.multiplex(mplexObj)
 
 nodes.multiplex(mplexObj, index = sample(1:length(nodes.multiplex(mplexObj)), 10), label = TRUE)
 }
+
+\keyword{network, multiplex}

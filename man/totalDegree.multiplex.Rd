@@ -70,3 +70,5 @@ totalDegree.multiplex(mplexObj,
                       verbose = TRUE
                       )
 }
+
+\keyword{network, multiplex}

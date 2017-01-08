@@ -52,3 +52,5 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 degreeDistribution.multiplex(mplexObj)
 }
+
+\keyword{network, multiplex}

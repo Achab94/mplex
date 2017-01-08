@@ -68,3 +68,5 @@ c1Local.multiplex(mplexObj,
                   indexLayer = c(1, 3, 4)
                   )
 }
+
+\keyword{network, multiplex}

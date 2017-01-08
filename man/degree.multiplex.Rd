@@ -80,3 +80,5 @@ mplexObjDirected <- create.multiplex(nodes = aarhus_mplex$nodes,
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)$coauthor
 }
+
+\keyword{network, multiplex}

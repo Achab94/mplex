@@ -79,3 +79,5 @@ entropyDegree.multiplex(mplexObj,
                         display = TRUE
                         )
 }
+
+\keyword{network, multiplex}

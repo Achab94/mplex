@@ -77,3 +77,5 @@ supraEigenvectorCentrality.multiplex(mplexObj,
 supraEigenvectorCentrality.multiplex(mplexObj, rowStand = TRUE)
 apply(supraEigenvectorCentrality.multiplex(mplexObj, rowStand = TRUE), 1, sum)
 }
+
+\keyword{network, multiplex}

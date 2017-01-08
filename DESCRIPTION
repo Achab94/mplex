@@ -2,7 +2,7 @@ Package: mplex
 Type: Package
 Title: mplex
 Version: 1.0
-Date: 2017-01-07
+Date: 2017-01-08
 Author: Emanuele Degani
 Imports: igraph
 Maintainer: Emanuele Degani <emanuele.achab@gmail.com>

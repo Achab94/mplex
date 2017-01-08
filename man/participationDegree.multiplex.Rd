@@ -78,3 +78,5 @@ participationDegree.multiplex(mplexObj,
                               display = TRUE
                               )
 }
+
+\keyword{network, multiplex}

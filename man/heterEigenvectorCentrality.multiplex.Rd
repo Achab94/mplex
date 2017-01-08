@@ -87,3 +87,5 @@ heterEigenvectorCentrality.multiplex(mplexObj, W = W)
 heterEigenvectorCentrality.multiplex(mplexObj, rowStand = TRUE)
 apply(heterEigenvectorCentrality.multiplex(mplexObj, rowStand = TRUE), 1, sum)
 }
+
+\keyword{network, multiplex}
