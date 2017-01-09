@@ -27,14 +27,11 @@
   A list with, for each (intra)layer, a vector of degrees for the nodes selected with the \code{indexNode} argument. If \code{modeDirected = TRUE}, it adds a list with 'in-degree' and 'out-degree' besides 'total degree' in the directed (intra)layers' position inside the output.
 }
 \references{
-Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
-}
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
+Wassermann and Faust (1994), \emph{Social network analysis.} Cambridge University Press.
 }
 
 \seealso{
-\code{\link{create.multiplex}}, \code{\link{degree}{igraph}}
+\code{\link{create.multiplex}}, \code{\link[igraph]{degree}}
 }
 \examples{
 # Loading Aarhus CS Department dataset.
@@ -57,9 +54,9 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 degree.multiplex(mplexObj)
 
-# Refining the evaluation only on 10 employees randomly chosen, for each layer:
+# Refining the evaluation only on 10 employees chosen, for each layer:
 
-degree.multiplex(mplexObj, indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10))
+degree.multiplex(mplexObj, indexNode = 1:10, 10)
 
 # Supposing one (or more) layers of the multiplex network have a directed relationship (for
 # example, the third), we can obtain both the in-degree, out-degree and total-degree measures
@@ -83,3 +80,6 @@ mplexObjDirected <- create.multiplex(nodes = aarhus_mplex$nodes,
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)
 degree.multiplex(mplexObjDirected, modeDirected = TRUE)$coauthor
 }
+
+\keyword{network}
+\keyword{multiplex}

@@ -18,13 +18,10 @@ densityLayers.multiplex(obj)
 }
 
 \value{
-  A \code{list} containing the densities of the degrees for each (intra)layer of the multiplex network.
+  A \code{list} with the densities of the nodes for each (intra)layer of the multiplex network.
 }
 \references{
-  Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+Wassermann and Faust (1994), \emph{Social network analysis.} Cambridge University Press.
 }
 
 \seealso{
@@ -54,3 +51,6 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 densityLayers.multiplex(mplexObj)
 
 }
+
+\keyword{network}
+\keyword{multiplex}

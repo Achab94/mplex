@@ -5,15 +5,12 @@
   Multiplex eigenvector centrality indices of the multiplex network
 }
 \description{
-  This function calculates the \emph{multiplex eigenvector centrality} indices of the multiplex network, for each of its (inter)layers. The operation is conducted calculating the eigenvector referred to the maximum (in absolute value) eigenvalue of the \emph{supra adjacency matrix} of the multiplex network, obtained with the \code{supra.adjacency.multiplex} function. Defined N the number of nodes and L the number of (inter)layers of the multiplex network, the supra-adjacency matrix is N*L x N*L, thus the eigenvector has length N*L. The L vectors given in output are simply obtained breaking the N*L eigenvector into L vectors, each of length N and referred to the multiplex eigenvector centrality measures of the nodes (eventually selected with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.
+  This function calculates the \emph{multiplex eigenvector centrality} indices of the multiplex network, for each of its (inter)layers.
 }
 \usage{
 supraEigenvectorCentrality.multiplex(obj,
                                     indexNode = 1:length(nodes.multiplex(obj)),
-                                    rowStand = TRUE,
-                                    testIrreducibility = FALSE,
-                                    maxPower = 100
-                                    )
+                                    rowStand = TRUE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -26,24 +23,17 @@ supraEigenvectorCentrality.multiplex(obj,
   \item{rowStand}{
   Default is \code{TRUE}. If \code{FALSE}, the vectors given in output are not standardized (i.e. the sum of their components is != 1) and comparison with other (intra)layers or multiplex networks is more difficult.
 }
-  \item{testIrreducibility}{
-  Default is \code{FALSE}. If \code{TRUE}, the function tests the irreducibility of the supra adjacency matrix and prints on console the result. Irreducibility is a needed hypotesy to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosiacted to the maximum eigenvalue of the supra adjacency matrix of the multiplex network.
-}
-  \item{maxPower}{
-  Default is \code{100}. It is the power on which the irreducibility test stops.
-}
+
 }
 \details{
-  Irreducibility tested with the \code{testIrreducibility} is a requirred hypotesy of the Perron-Frobenius theorem, but results are usually good even if it is not strictly satisfied.
+The operation is conducted calculating the eigenvector referred to the maximum (in absolute value) eigenvalue of the \emph{supra adjacency matrix} of the multiplex network, obtained with the \code{supra.adjacency.multiplex} function. Defined N the number of nodes and L the number of (inter)layers of the multiplex network, the supra-adjacency matrix is N*L x N*L, thus the eigenvector has length N*L. The L vectors given in output are simply obtained breaking the N*L eigenvector into L vectors, each of length N and referred to the multiplex eigenvector centrality measures of the nodes (eventually selected with \code{indexNode} argument) on a certain (intra)layer of the multiplex network.
+Irreducibility is a required assumption to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosicated to the maximum eigenvalue of the supra adjacency matrix of the multiplex network; nevertheless, results are usually good even if it is not strictly satisfied.
 }
 \value{
   A \code{list} with the L vectors of the multiplex eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument).
 }
 \references{
-  De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 }
 
 \seealso{
@@ -72,12 +62,12 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 supraEigenvectorCentrality.multiplex(mplexObj)
 round(supraEigenvectorCentrality.multiplex(mplexObj), 5)
 
-# It can also be possible to select the IDs of the nodes on which to calculate the index,
+# It can also be possible to select the first 10 IDs of the nodes on which to calculate the index,
 # using 'indexNode' argument as in this case:
 
 round(
 supraEigenvectorCentrality.multiplex(mplexObj,
-                            indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10))
+                            indexNode = 1:10)
      , 5)
 
 # Another way to visualize the results is to consider the standardized measures. In this case,
@@ -86,12 +76,7 @@ supraEigenvectorCentrality.multiplex(mplexObj,
 
 supraEigenvectorCentrality.multiplex(mplexObj, rowStand = TRUE)
 apply(supraEigenvectorCentrality.multiplex(mplexObj, rowStand = TRUE), 1, sum)
-
-# One last feature of this function, is the possibility to test the irreducibility condition
-# (needed for satisfying the Perron-Frobenius Theorem) with the 'testIrreducibility = TRUE'
-# option, and to fix the maximum number of iterations to do before stopping the test with
-# 'maxPower' argument. If 'testIrreducibility = TRUE', then it is printed on console whether
-# the irreducibility condition is satisfied or not on the supra-adjacency matrix:
-
-supraEigenvectorCentrality.multiplex(mplexObj, testIrreducibility = TRUE, maxPower = 100)
 }
+
+\keyword{network}
+\keyword{multiplex}

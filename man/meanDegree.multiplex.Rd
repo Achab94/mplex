@@ -8,7 +8,9 @@
   This function calculates the mean of the degrees on each (intra)layer of the multiplex network. For (intra)layers with \emph{directed} relationships, the function considers the 'total degree' descriptor.
 }
 \usage{
-meanDegree.multiplex(obj, indexNodeMean = 1:length(nodes.multiplex(obj)), verbose = FALSE)
+meanDegree.multiplex(obj,
+                    indexNodeMean = 1:length(nodes.multiplex(obj)),
+                    verbose = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -27,10 +29,7 @@ meanDegree.multiplex(obj, indexNodeMean = 1:length(nodes.multiplex(obj)), verbos
   A \code{list} containing the means of the degrees for each (intra)layer of the multiplex network.
 }
 \references{
-  Wassermann and Faust (1994), \emph{Social network analysis.} http://dx.doi.org/10.1017/CBO9780511815478
-}
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
+Wassermann and Faust (1994), \emph{Social network analysis.} Cambridge University Press.
 }
 
 \seealso{
@@ -59,15 +58,15 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 meanDegree.multiplex(mplexObj)
 
-# Calculating the mean degrees selecting 10 employees randomly on which to execute the calculation:
+# Calculating the mean degrees on 10 employees:
 
-meanDegree.multiplex(mplexObj, indexNodeMean = sample(1:length(nodes.multiplex(mplexObj)), 10))
+meanDegree.multiplex(mplexObj, indexNodeMean = 1:10)
 
 # Using the 'verbose = TRUE' option, the function prints the name of the nodes on which the mean
 # degree is performed:
 
-meanDegree.multiplex(mplexObj,
-                    indexNodeMean = sample(1:length(nodes.multiplex(mplexObj)), 10),
-                    verbose = TRUE
-                    )
+meanDegree.multiplex(mplexObj, indexNodeMean = 1:10, verbose = TRUE)
 }
+
+\keyword{network}
+\keyword{multiplex}

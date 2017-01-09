@@ -24,10 +24,6 @@
   A \code{vector} with the layers' relationship type \code{strings} selected by the \code{index} argument.
 }
 
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
-}
-
 \seealso{
   \code{\link{create.multiplex}}
 }
@@ -56,3 +52,6 @@ type.multiplex(mplexObj)
 
 type.multiplex(mplexObj, index = c("leisure", "facebook"))
 }
+
+\keyword{network}
+\keyword{multiplex}

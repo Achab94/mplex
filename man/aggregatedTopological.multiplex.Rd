@@ -33,11 +33,9 @@ aggregatedTopological.multiplex(obj,
 A N x N \code{matrix}, the so-called aggregated topological matrix, where N is the number of nodes of the network.
 }
 \references{
-Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http://dx.doi.org/10.1103/PhysRevE.89.032804
+Battiston et al. (2014) \emph{Structural measures for multiplex networks.} Phys. Rev. E 89, 032804.
 }
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
-}
+
 \note{
 This function could also be used to \emph{dichotomize} a weighted adjacency matrix referred to a particular layer with weighted relationship: select the interested layer with its ID in the \emph{indexLayer} argument.
 }
@@ -68,14 +66,17 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 aggregatedTopological.multiplex(mplexObj)
 
-# Creating the aggregated topological matrix, casually selecting some nodes (employees) and
+# Creating the aggregated topological matrix, selecting some nodes (employees) and
 # 3 layers (relationships) between the 5 of the multiplex network.
 # The command also prints on console (with option 'verbose = TRUE') the name of the layers
 # used (and selected) for the construction of the aggregated topological matrix:
 
 aggregatedTopological.multiplex(mplexObj,
-                                indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10),
+                                indexNode = 1:10,
                                 indexLayer = c(1, 3, 5),
                                 verbose = TRUE
                                 )
 }
+
+\keyword{network}
+\keyword{multiplex}

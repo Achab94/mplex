@@ -51,10 +51,7 @@
   }
 }
 \references{
-De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
-}
-\author{
-Emanuele Degani \email{emanuele.degani@gmail.com}
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 }
 
 \section{Warning }{
@@ -84,3 +81,6 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 str(mplexObj)
 }
+
+\keyword{network}
+\keyword{multiplex}

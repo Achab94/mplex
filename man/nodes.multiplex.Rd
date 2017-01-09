@@ -26,9 +26,6 @@ nodes.multiplex(obj, index = 1:nrow(obj$nodes), label = FALSE)
 \value{
 A \code{vector} with the nodes selected by the \code{index} argument.
 }
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
-}
 
 \seealso{
 \code{\link{create.multiplex}}
@@ -60,3 +57,6 @@ nodes.multiplex(mplexObj)
 
 nodes.multiplex(mplexObj, index = sample(1:length(nodes.multiplex(mplexObj)), 10), label = TRUE)
 }
+
+\keyword{network}
+\keyword{multiplex}

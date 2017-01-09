@@ -2,10 +2,10 @@
 \alias{C2Global.multiplex}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  C1 global clustering coefficients for multiplex networks
+  C2 global clustering coefficients for multiplex networks
 }
 \description{
-  Calculates Battiston et al. (2014)'s \emph{C2} global clustering coefficient of a multiplex network. Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index takes into consideration all the possible tradics structures that takes form even considering interlayers relationships. The index is defined as the ratio between the number of 3-triangles of the multiplex network, and (L - 2) times the number of 2-triads of the multiplex network, where L is the number of layers.
+  Computes Battiston et al. (2014)'s \emph{C2} global clustering coefficient of a multiplex network. Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index takes into consideration all the possible tradics structures that takes form even considering interlayers relationships. The index is defined as the ratio between the number of 3-triangles of the multiplex network, and (L - 2) times the number of 2-triads of the multiplex network, where L is the number of layers.
 }
 \usage{
 C2Global.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)))
@@ -21,18 +21,18 @@ C2Global.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)))
 }
 
 \section{Warnings }{
-  Note that the C2 global clustering coefficient can be defined for a multiplex network with, at least, 3 (intra)layers. So, if \code{indexLayer} argument has length < 3, the function produces a warning in console.
+  Note that the C2 global clustering coefficient can be defined for a multiplex network with, at least, 3 (intra)layers. So, if \code{indexLayer} argument has length < 3, the function produces an error and halts.
 }
-
+\details{
+Function use \emph{permutations()} function from \emph{gtools} package. More informations available at \url{https://cran.r-project.org/web/packages/gtools/index.html}.
+}
 \value{
   A vector of length one and value corresponding to the C2 global clustering coefficient.
 }
 \references{
-  Battiston et al. (2014) \emph{Structural measures for multiplex networks.} http://dx.doi.org/10.1103/PhysRevE.89.032804
+Battiston et al. (2014) \emph{Structural measures for multiplex networks.} Phys. Rev. E 89, 032804.
 }
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
-}
+
 
 \seealso{
   \code{\link{create.multiplex}}, \code{\link{c2Local.multiplex}}
@@ -54,7 +54,7 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
                             aarhus_mplex$L5
                             )
 
-# Calculating the so-called C2 global clustering index for the nodes of the multiplex network:
+# Computing the so-called C2 global clustering index for the nodes of the multiplex network:
 
 C2Global.multiplex(mplexObj)
 
@@ -63,3 +63,6 @@ C2Global.multiplex(mplexObj)
 
 C2Global.multiplex(mplexObj, indexLayer = c(1, 2, 3))
 }
+
+\keyword{network}
+\keyword{multiplex}

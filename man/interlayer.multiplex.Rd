@@ -27,14 +27,9 @@ interlayer.multiplex(obj, level1, level2)
   A N*N \code{matrix} with the interlayer (adjacency) matrix between the selected levels, where N is the number of nodes of the multiplex network.
 }
 \references{
-De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 
-
-Kivela, M. et al (2014). \emph{Multilayer Networks.} http://doi.org/10.1093/comnet/cnu016
-}
-
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
+Kivela, M. et al (2014). \emph{Multilayer Networks.} J. Complex Network. 2(3): 203-271.
 }
 
 \section{Warning }{If arguments \code{level1} = \code{level2}, the function can't perform. In fact, the interlayer matrix between the same level is called \emph{intralayer matrix} and it can be extracted with the \code{adjacency.multiplex} function.}
@@ -73,3 +68,6 @@ diag(interlayer.multiplex(mplexObj, level1 = 1, level2 = 4))
 
 # interlayer.multiplex(mplexObj, 3, 3)
 }
+
+\keyword{network}
+\keyword{multiplex}

@@ -24,12 +24,8 @@ degreeCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))
   A numerical \code{vector} with all the multiplex degree centrality index for the nodes of the network (eventually selected with \code{indexNode} argument).
 }
 \references{
-  De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} http://doi.org/10.1103/PhysRevX.3.041022
+De Domenico et al (2014). \emph{Mathematical formulation of multilayer networks.} Phys. Rev. X 3, 041022.
 }
-\author{
-  Emanuele Degani \email{emanuele.achab@gmail.com}
-}
-
 
 \seealso{
   \code{\link{create.multiplex}}, \code{\link{aggregatedOverlapping.multiplex}}
@@ -62,3 +58,6 @@ degreeCentrality.multiplex(mplexObj,
                           indexNode = sample(1:length(nodes.multiplex(mplexObj)), 10)
                           )
 }
+
+\keyword{network}
+\keyword{multiplex}

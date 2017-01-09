@@ -1,3 +1,5 @@
+
+#' @export
 create.multiplex <- function(nodes, layersNames = FALSE, layer1, type1, ...){
   N <- nrow(nodes)
   layer1 <- as.matrix(layer1)
@@ -90,7 +92,7 @@ create.multiplex <- function(nodes, layersNames = FALSE, layer1, type1, ...){
   return(mplex)
 }
 
-
+#' @importFrom utils combn
 addInterlayer.multiplex <- function(obj){
   L <- length(layers.multiplex(obj))
   N <- length(nodes.multiplex(obj))
@@ -118,7 +120,7 @@ addInterlayer.multiplex <- function(obj){
   return(obj)
 }
 
-
+#' @export
 interlayer.multiplex <- function(obj, level1, level2){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object.\n")
   if(level1 == level2){
@@ -131,7 +133,7 @@ interlayer.multiplex <- function(obj, level1, level2){
   return(interlayerMatrix)
 }
 
-
+#' @export
 nodes.multiplex <- function(obj, index = 1:nrow(obj$nodes), label = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -145,7 +147,7 @@ nodes.multiplex <- function(obj, index = 1:nrow(obj$nodes), label = FALSE){
   }
 }
 
-
+#' @export
 layers.multiplex <- function(obj, index = 1:length(obj$layers), label = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -157,14 +159,14 @@ layers.multiplex <- function(obj, index = 1:length(obj$layers), label = FALSE){
   }
 }
 
-
+#' @export
 adjacency.multiplex <- function(obj, index = 1:length(obj$adjacency)){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   return(obj$adjacency[index])
 }
 
-
+#' @export
 type.multiplex <- function(obj, index = 1:length(obj$type)){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -173,7 +175,7 @@ type.multiplex <- function(obj, index = 1:length(obj$type)){
   return(out[index])
 }
 
-
+#' @importFrom igraph graph.adjacency
 graph.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -187,7 +189,8 @@ graph.multiplex <- function(obj){
   return(G)
 }
 
-
+#' @importFrom igraph degree
+#' @export
 degree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), modeDirected = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -206,7 +209,8 @@ degree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), mo
   return(degreeList)
 }
 
-
+#' @importFrom igraph degree.distribution
+#' @export
 degreeDistribution.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -221,7 +225,7 @@ degreeDistribution.multiplex <- function(obj){
   return(distributionList)
 }
 
-
+#' @export
 totalDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -247,7 +251,7 @@ totalDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)
   return(totalDegree[indexNode])
 }
 
-
+#' @export
 meanDegree.multiplex <- function(obj, indexNodeMean = 1:length(nodes.multiplex(obj)), verbose = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -272,7 +276,8 @@ meanDegree.multiplex <- function(obj, indexNodeMean = 1:length(nodes.multiplex(o
   return(meanList)
 }
 
-
+#' @export
+#' @importFrom stats var
 varianceDegree.multiplex <- function(obj, indexNodeVar = 1:length(nodes.multiplex(obj)), verbose = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -298,7 +303,8 @@ varianceDegree.multiplex <- function(obj, indexNodeVar = 1:length(nodes.multiple
   return(varList)
 }
 
-
+#' @export
+#' @importFrom igraph graph.density
 densityLayers.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -314,7 +320,7 @@ densityLayers.multiplex <- function(obj){
   return(densityList)
 }
 
-
+#' @export
 aggregatedTopological.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -349,7 +355,7 @@ aggregatedTopological.multiplex <- function(obj, indexNode = 1:length(nodes.mult
   return(A)
 }
 
-
+#' @export
 aggregatedOverlapping.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -364,16 +370,16 @@ aggregatedOverlapping.multiplex <- function(obj, indexNode = 1:length(nodes.mult
 
   if(verbose){
     if(length(indexLayer) == 1){
-      cat("Matrice ottenuta con il solo livello", layers.multiplex(obj, label = T)[indexLayer],".\n")
+      cat("Matrix obtained with level", layers.multiplex(obj, label = T)[indexLayer],".\n")
     }
     else{
-      cat("Matrice ottenuta con i livelli", layers.multiplex(obj, label = T)[indexLayer],".\n")
+      cat("Matrix obtained with levels", layers.multiplex(obj, label = T)[indexLayer],".\n")
     }
   }
   return(A)
 }
 
-
+#' @export
 supraAdjacency.multiplex <- function(obj){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -412,6 +418,13 @@ supraAdjacency.multiplex <- function(obj){
 #  return(out)
 #}
 
+#' @export
+#' @importFrom graphics plot
+#' @importFrom graphics points
+#' @importFrom graphics box
+#' @importFrom graphics grid
+#' @importFrom graphics axis
+#' @importFrom igraph graph.adjacency
 entropyDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOverlappingLayer = 1:length(layers.multiplex(obj)), display = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -420,7 +433,7 @@ entropyDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(ob
 
   H <- function(row){
     last <- length(row)
-    return(-sum((row[-last]/row[last]) * log((row[-last] + 0.001)/row[last]))) # Correction +0.5
+    return(-sum((row[-last]/row[last]) * log((row[-last] + 0.001)/row[last]))) # Correction +0.001
   }
 
   tab <- cbind(simplify2array(degree.multiplex(obj))[, indexOverlappingLayer], degreesOverlapped)
@@ -437,6 +450,14 @@ entropyDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(ob
   return(out)
 }
 
+#' @export
+#' @importFrom graphics plot
+#' @importFrom graphics points
+#' @importFrom graphics box
+#' @importFrom graphics grid
+#' @importFrom graphics axis
+#' @importFrom igraph graph.adjacency
+#' @importFrom graphics abline
 participationDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexOverlappingLayer = 1:length(layers.multiplex(obj)), display = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -464,7 +485,8 @@ participationDegree.multiplex <- function(obj, indexNode = 1:length(nodes.multip
   return(out)
 }
 
-
+#' @export
+#' @importFrom igraph transitivity
 localClustering.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj))){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -528,8 +550,7 @@ permutations <- function(n, r, v = 1:n, set = TRUE, repeats.allowed=FALSE){
   sub(n, r, v[1:n])
 }
 
-
-
+#' @export
 c1Local.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj))){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -556,7 +577,7 @@ c1Local.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), i
   return(out[indexNode])
 }
 
-
+#' @export
 c2Local.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), indexLayer = 1:length(layers.multiplex(obj))){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -584,7 +605,7 @@ c2Local.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), i
   return(out[indexNode])
 }
 
-
+#' @export
 C1Global.multiplex <- function(obj, indexLayer = 1:length(layers.multiplex(obj))){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -610,7 +631,7 @@ C1Global.multiplex <- function(obj, indexLayer = 1:length(layers.multiplex(obj))
   return(sum(diag(numMatrix))/sum(diag(denMatrix)))
 }
 
-
+#' @export
 C2Global.multiplex <- function(obj, indexLayer = 1:length(layers.multiplex(obj))){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -637,7 +658,7 @@ C2Global.multiplex <- function(obj, indexLayer = 1:length(layers.multiplex(obj))
   return(sum(diag(numMatrix))/sum(diag(denMatrix)))
 }
 
-
+#' @export
 globalOverlayClustering.multiplex <- function(obj, indexLayer = 1:length(layers.multiplex(obj)), verbose = FALSE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -662,7 +683,7 @@ globalOverlayClustering.multiplex <- function(obj, indexLayer = 1:length(layers.
   return(sum(diag(numMatrix))/((max/L) * sum(diag(denMatrix))))
 }
 
-
+#' @export
 degreeCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj))){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
@@ -687,38 +708,13 @@ degreeCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex
   return(out[indexNode])
 }
 
-
-supraEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), rowStand = TRUE, testIrreducibility = FALSE, maxPower = 100){
+#' @export
+supraEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), rowStand = TRUE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   supraMatrix <- supraAdjacency.multiplex(obj) # Supra adjacency matrix
   N <- length(nodes.multiplex(obj))
   L <- length(layers.multiplex(obj))
-
-  if(testIrreducibility){
-  ########## TESTING OF IRREDUCIBILITY FOR PERRON-FROBENIUS'S THM ##########
-    irreducible <- function(matrix, maxP){
-      Mstart <- matrix
-      m <- 1
-      M <- Mstart
-      repeat{
-        M <- M %*% Mstart
-        m <- m + 1
-  #     print(m)
-        if(sum((M == matrix(0, nrow(Mstart), ncol(Mstart)))) == 0){
-          return(TRUE)
-        }
-        if(m == maxP){
-          return(list(FALSE, m))
-        }
-      }
-    }
-
-    if(!(irreducible(matrix = supraMatrix, maxP = maxPower)[[1]])){
-      cat("WARNING:", irreducible(matrix = supraMatrix, maxP = maxPower)[[2]], "iterations have been performed, and irreducibility for the Perron-Frobenius Theorem is not guaranteed.\n")
-    }
-  #################################################################################
-  }
 
   supraEigenvector <- eigen(supraMatrix)$vectors[,1]
 
@@ -734,9 +730,8 @@ supraEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   else return(Re(outMatrix[, indexNode]))
 }
 
-
-
-heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), W = matrix(1, length(layers.multiplex(obj)), length(layers.multiplex(obj))), rowStand = TRUE, testIrreducibility = FALSE, maxPower = 100){
+#' @export
+heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes.multiplex(obj)), W = matrix(1, length(layers.multiplex(obj)), length(layers.multiplex(obj))), rowStand = TRUE){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   N <- length(nodes.multiplex(obj))
@@ -747,36 +742,11 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   adjTransposeBlockVectorMatrix <- do.call(rbind, replicate(L, adjTransposeBlockVector, simplify = FALSE))
   perronMatrix <- kronecker(W, matrix(1, N, N)) * adjTransposeBlockVectorMatrix
 
-  if(testIrreducibility){
-    ########## TESTING OF IRREDUCIBILITY FOR PERRON-FROBENIUS'S THM ##########
-    irreducible <- function(matrix, maxP){
-      Mstart <- matrix
-      m <- 1
-      M <- Mstart
-      repeat{
-        M <- M %*% Mstart
-        m <- m + 1
-        if(sum((M == matrix(0, nrow(Mstart), ncol(Mstart)))) == 0){
-          return(TRUE)
-        }
-        if(m == maxP){
-          return(list(FALSE, m))
-        }
-      }
-    }
-
-    if(!(irreducible(perronMatrix, maxP = maxPower)[[1]])){
-      cat("WARNING:", irreducible(perronMatrix, maxP = maxPower)[[2]], "iterations have been performed, and irreducibility for the Perron-Frobenius Theorem is not guaranteed.\n")
-    }
-  #################################################################################
-  }
-
   perronEigenvector <- eigen(perronMatrix)$vectors[,1]
 
   outMatrix <- matrix(perronEigenvector, nrow = L, ncol = N, byrow = T)
   rownames(outMatrix) <- layers.multiplex(obj, label = T)
   colnames(outMatrix) <- nodes.multiplex(obj, label = T)
-
 
   if(rowStand){
     outMatrix <- t(apply(outMatrix, 1, function(row) row/sum(row)))
@@ -784,4 +754,23 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
 
   if(sign(Re(outMatrix[1,1])) == -1) return((-1) * Re(outMatrix[, indexNode]))
   else return(Re(outMatrix[, indexNode]))
+}
+
+#' @importFrom networkD3 simpleNetwork
+#' @importFrom igraph plot.igraph
+#' @export
+plotting.multiplex <- function(obj, index){
+  if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
+
+  if(length(index) == 1) {
+    layerDataFrame <- as.data.frame(obj$layers[[index]])[, c(1, 2)]
+    for(i in 1:2) layerDataFrame[, i] <- nodes.multiplex(obj, label = T)[layerDataFrame[, i]]
+    simpleNetwork(layerDataFrame, fontSize = 15, zoom = T)
+  }
+  else{
+    for(i in index){
+      plot.igraph(graph.multiplex(obj)[[i]], main = layers.multiplex(obj, index = i, label = T), vertex.size = 10)
+      readline("Please press [enter] to see next graph.")
+    }
+  }
 }

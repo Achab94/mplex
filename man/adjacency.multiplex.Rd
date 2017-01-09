@@ -16,16 +16,12 @@ adjacency.multiplex(obj, index = 1:length(obj$adjacency))
   An object of class \samp{multiplex}.
 }
   \item{index}{
-   A vector of the layers' IDs selected for the extraction of their relative adjacency matrices. By default, the vector contains the IDs of all the layers of the network.
+   A vector of layer positions whose adjacency has to be computed. Default is all the layers.
 }
 }
 
 \value{
   A \samp{list} having the adjacency matrices of the selected layers as components.
-}
-
-\author{
-Emanuele Degani \email{emanuele.achab@gmail.com}
 }
 
 \seealso{
@@ -62,3 +58,6 @@ adjacency.multiplex(mplexObj, index = 1)
 
 adjacency.multiplex(mplexObj, index = "lunch")
 }
+
+\keyword{network}
+\keyword{multiplex}
