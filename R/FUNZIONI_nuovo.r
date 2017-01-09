@@ -759,7 +759,7 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
 #' @importFrom networkD3 simpleNetwork
 #' @importFrom igraph plot.igraph
 #' @export
-plot.multiplex <- function(obj, index){
+plotting.multiplex <- function(obj, index){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   if(length(index) == 1) {
@@ -769,7 +769,7 @@ plot.multiplex <- function(obj, index){
   }
   else{
     for(i in index){
-      plot.igraph(graph.multiplex(MPLEX)[[i]], main = layers.multiplex(MPLEX, index = i, label = T), vertex.size = 10)
+      plot.igraph(graph.multiplex(obj)[[i]], main = layers.multiplex(obj, index = i, label = T), vertex.size = 10)
       readline("Please press [enter] to see next graph.")
     }
   }
