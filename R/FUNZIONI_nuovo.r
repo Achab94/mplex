@@ -755,3 +755,22 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   if(sign(Re(outMatrix[1,1])) == -1) return((-1) * Re(outMatrix[, indexNode]))
   else return(Re(outMatrix[, indexNode]))
 }
+
+#' @importFrom networkD3 simpleNetwork
+#' @importFrom igraph plot.igraph
+#' @export
+plot.multiplex <- function(obj, index){
+  if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
+
+  if(length(index) == 1) {
+    layerDataFrame <- as.data.frame(obj$layers[[index]])[, c(1, 2)]
+    for(i in 1:2) layerDataFrame[, i] <- nodes.multiplex(obj, label = T)[layerDataFrame[, i]]
+    simpleNetwork(layerDataFrame, fontSize = 15, zoom = T)
+  }
+  else{
+    for(i in index){
+      plot.igraph(graph.multiplex(MPLEX)[[i]], main = layers.multiplex(MPLEX, index = i, label = T), vertex.size = 10)
+      readline("Please press [enter] to see next graph.")
+    }
+  }
+}
