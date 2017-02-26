@@ -25,24 +25,31 @@
 
 \source{
  The original dataset is publicly available at \url{http://deim.urv.cat/~manlio.dedomenico/data/CS-Aarhus_Multiplex_Social.zip}.
- See \url{http://larica.uniurb.it/sigsna/data/} for further details.
+ See Magnani et al. (2013)  for further details.
+}
+
+\references{
+Magnani, M. et al (2013), \emph{Combinatorial Analysis of Multiple Networks} 	arXiv:1303.4986
 }
 
 \examples{
 data(aarhus_mplex)
 
-head(aarhus_mplex$nodes)
 # data.frame object with information about the employees of the network.
 # We see, for example, that employee named 'U33' has number 3 as univoque ID.
 
-aarhus_mplex$layerNames
+head(aarhus_mplex$nodes)
+
 # list object with characters describing the relationships taken into consideration
 # in the multiplex network.
 
-head(aarhus_mplex$L3)
+aarhus_mplex$layerNames
+
 # data.frame object with edges for coautorship (third level) relationship.
 # We see, for example, that employees with IDs 18 and 46 are linked into a coautorship
 # relation in CS Aarhus Department.
+
+head(aarhus_mplex$L3)
 }
 
 \keyword{datasets}

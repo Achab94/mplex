@@ -5,7 +5,7 @@
   Entropy of the degrees' distribution
 }
 \description{
-  This function calculates the entropy measure used to evaluate the heterogeneity of the nodes' distribution on a certain (intra)layer of the multiplex network. The formula is proposed in Battiston et al. (2014) work (see References).
+  This function calculates the entropy measure used to evaluate the heterogeneity of the nodes' distribution on a certain (intra)layer of the multiplex network.
 }
 \usage{
 entropyDegree.multiplex(obj,

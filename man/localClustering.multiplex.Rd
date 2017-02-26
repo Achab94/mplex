@@ -5,7 +5,7 @@
   Layers' local clustering index of the multiplex network
 }
 \description{
-  The function calculates the local clustering index (sometimes called \emph{transitivity measure}, see References) of the nodes (eventually selected with \code{indexNode} argument) for each (intra)layer of the multiplex network. It combines the \code{graph.multiplex} and \code{igraph}'s \code{transitivity} function, so \code{igraph} package is mandatory.
+  The function calculates the local clustering index (sometimes called \emph{transitivity measure}, see References) of the nodes (eventually selected with \code{indexNode} argument) for each (intra)layer of the multiplex network.
 }
 \usage{
 localClustering.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))

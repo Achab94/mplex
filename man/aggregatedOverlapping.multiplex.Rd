@@ -5,7 +5,9 @@
   Overlapped adjacency matrix of the multiplex network
 }
 \description{
-  Creates the \emph{overlapped adjacency matrix} (see References), i.e. the adjacency matrix of the \emph{overlay monoplex network} based on a specific multiplex network. It is mostly useful for detecting how many times two different nodes are linked each other on the (intra)layers of the multiplex network (eventually selected with the \code{indexLayer} argument).
+  Creates the \emph{overlapped adjacency matrix} }
+\details{
+  The adjacency matrix of the \emph{overlay monoplex network} based on a specific multiplex network. It is mostly useful for detecting how many times two different nodes are linked each other on the (intra)layers of the multiplex network (eventually selected with the \code{indexLayer} argument), see References.
 }
 \usage{
 aggregatedOverlapping.multiplex(obj,
