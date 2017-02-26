@@ -2,7 +2,7 @@
 \alias{meanDegree.multiplex}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  Layers' mean degree of the multiplex network
+  Mean degree of layers in the multiplex network
 }
 \description{
   This function calculates the mean of the degrees on each (intra)layer of the multiplex network. For (intra)layers with \emph{directed} relationships, the function considers the 'total degree' descriptor.

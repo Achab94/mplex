@@ -5,7 +5,10 @@
   C1 global clustering coefficients for multiplex networks
 }
 \description{
-  Computes Battiston et al.(2014)'s \emph{C1} global clustering coefficient of a multiplex network. Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index accounts for all the possible tradic structures that take form considering interlayers relationships. The index is defined as the ratio between the number of 2-triangles of the multiplex network, and (L - 1) times the number of 1-triads of the multiplex network, where L is the number of layers.
+  Computes Battiston et al.(2014)'s \emph{C1} global clustering coefficient of a multiplex network.
+}
+\details{
+Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index accounts for all the possible tradic structures that take form considering interlayers relationships. The index is defined as the ratio between the number of 2-triangles of the multiplex network, and (L - 1) times the number of 1-triads of the multiplex network, where L is the number of layers.
 }
 \usage{
 C1Global.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)))

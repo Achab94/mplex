@@ -2,7 +2,7 @@
 \alias{nodes.multiplex}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-  Extraction of the nodes' vector
+  Extraction of the node vector
 }
 \description{
   The function allows a user-friendly method for extracting the information about selected nodes of the multiplex network.

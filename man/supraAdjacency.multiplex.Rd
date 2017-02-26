@@ -5,8 +5,9 @@
   Supra-adjacency matrix of the multiplex network
 }
 \description{
-  This function creates the so-called \emph{supra-adjacency matrix} (see References), obtained contracting the 4th order tensor (rapresenting De Domenico's et al. mathematical formulation in References) into a 2nd order N*L x N*L tensor (\code{matrix}), given N the number of nodes and L the number of (intra)layers of the network. The supra-adjacency matrix is a useful method for 'visualizing' all the multiplex network into a 2-dimensional workframe (a \code{matrix}).
+  This function creates the so-called \emph{supra-adjacency matrix}
 }
+
 \usage{
   supraAdjacency.multiplex(obj)
 }
@@ -18,6 +19,8 @@
 }
 \details{
   The \emph{supra-adjacency matrix} visualize all the interlayer and intralayer adjacency matrices of the multiplex network into a single large matrix. It is 'filled' with all the intralayer adjacency matrices on its diagonal, and with all the interlayer adjacency matrices elsewhere.
+
+This matrix is obtained contracting the 4th order tensor (rapresenting De Domenico's et al. mathematical formulation in References) into a 2nd order N*L x N*L tensor (\code{matrix}), given N the number of nodes and L the number of (intra)layers of the network. The supra-adjacency matrix is a useful method for 'visualizing' all the multiplex network into a 2-dimensional workframe (a \code{matrix}).
 }
 \value{
   A N*L x N*L \code{matrix}, composed as described in 'Details', where N is the number of nodes and L the number of layers of the network.

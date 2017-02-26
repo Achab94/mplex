@@ -5,7 +5,12 @@
   Multiplex heterogeneous eigenvector centrality indices of the multiplex network
 }
 \description{
- The function calculates the \emph{multiplex heterogeneous eigenvector centrality indices} proposed by Sola' et al. (see References for further information). This measure refeirs to the eigenvector of a special N*L x N*L matrix obtained from the (inter)layer adjacency matrices and the so-called \emph{influence matrix} of the multiplex network, where N is the number of nodes and L the number of layers of the multiplex network taken into consideration. Its eigenvector has length N*L, thus it's breaked into L sub-vectors, each of them refers to a certain (intra)layer of the multiplex network.
+ The function calculates the \emph{multiplex heterogeneous eigenvector centrality indices} proposed by Sola' et al.
+}
+\details{
+This measure refeirs to the eigenvector of a special N*L x N*L matrix obtained from the (inter)layer adjacency matrices and the so-called \emph{influence matrix} of the multiplex network, where N is the number of nodes and L the number of layers of the multiplex network taken into consideration. Its eigenvector has length N*L, thus it's breaked into L sub-vectors, each of them refers to a certain (intra)layer of the multiplex network.
+
+Irreducibility is a required assumption to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosicated to the maximum eigenvalue of the supra adjacency matrix of the multiplex network; nevertheless, results are usually good even if it is not strictly satisfied.
 }
 \usage{
 heterEigenvectorCentrality.multiplex(obj,
@@ -30,9 +35,7 @@ heterEigenvectorCentrality.multiplex(obj,
 }
 
 }
-\details{
-Irreducibility is a required assumption to satisfy the Perron-Frobenius theorem, which ensures the positivity of the eigenvector assosicated to the maximum eigenvalue of the supra adjacency matrix of the multiplex network; nevertheless, results are usually good even if it is not strictly satisfied.
-}
+
 \value{
 A \code{list} with the L vectors of the multiplex heterogeneous eigenvector centrality indices of the nodes (eventually selected with \code{indexNode} argument), where L is the number of layers of the multiplex network.
 }

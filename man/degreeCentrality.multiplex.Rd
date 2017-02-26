@@ -5,7 +5,9 @@
   Multiplex degree centrality indexes of the multiplex network
 }
 \description{
-  Calculates the \emph{multiplex degree centrality} coefficients of the nodes (eventually selected with \code{indexNode} argument) of the multiplex network, defined by De Domenico et al. (see References for further information). The single index referred to a generic node v_i is defined as its degree on the \emph{projected monoplex network}, whose adjacency matrix is obtained as a sum of all the (intra)layer adjacency matrices (i.e., the \emph{aggregated overlapping multiplex} obtainable with \code{aggregated.overlapping.multiplex}) and the interlayer adjacency matrices.
+  Calculates the \emph{multiplex degree centrality} coefficients of the nodes (possibly selected by \code{indexNode} argument) of the multiplex network, defined by De Domenico et al. (see References for further information).
+}
+\details{The single index referred to a generic node v is defined as its degree on the \emph{projected monoplex network}, whose adjacency matrix is obtained as a sum of all the (intra)layer adjacency matrices (i.e., the \emph{aggregated overlapping multiplex} obtainable with \code{aggregated.overlapping.multiplex}) and the interlayer adjacency matrices.
 }
 \usage{
 degreeCentrality.multiplex(obj, indexNode = 1:length(nodes.multiplex(obj)))

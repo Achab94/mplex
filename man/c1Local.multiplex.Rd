@@ -5,7 +5,10 @@
   c1 local clustering coefficients for multiplex networks
 }
 \description{
-  Computes Battiston et al. (2014)'s \emph{C1} local clustering coefficient of a multiplex network. Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index accounts for all the possible triadic structures that takes form even considering interlayers relationships. The index is defined, for a certain node v_i (possibly selected with \code{indexNode} argument) as the ratio between the number of 2-triangles that contains v_i, and (L - 1) times the number of 1-traids centred in v_i, defined L as the number of (intra)layers taken into consideration.
+  Computes Battiston et al. (2014)'s \emph{C1} local clustering coefficient of a multiplex network.
+}
+\details{
+Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index accounts for all the possible triadic structures that takes form even considering interlayers relationships. The index is defined, for a certain node v_i (possibly selected with \code{indexNode} argument) as the ratio between the number of 2-triangles that contains v_i, and (L - 1) times the number of 1-traids centred in v_i, defined L as the number of (intra)layers taken into consideration.
 }
 \usage{
 c1Local.multiplex(obj,

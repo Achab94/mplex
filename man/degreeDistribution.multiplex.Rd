@@ -5,7 +5,10 @@
   Layers' degrees' distribution of the multiplex network
 }
 \description{
-  This function calculates the degrees' distribution of the nodes on each (intra)layer of the multiplex network, combining the \code{graph.multiplex} and \code{igraph}'s \code{degree.distribution} functions. For (intra)layers with \emph{directed} relationships, the function considers 'total degree' descriptors.
+  This function calculates the degree distribution of the nodes on each (intra)layer of the multiplex network, combining the \code{graph.multiplex} and \code{igraph}'s \code{degree.distribution} functions.
+}
+\details{
+For (intra)layers with \emph{directed} relationships, the function considers 'total degree' descriptors.
 Degrees' distribution shows, for each (intra)layer of the network, the maximum degree on each layer and the percentage of a certain degree in the total distribution of the (intra)layer.
 }
 \usage{
