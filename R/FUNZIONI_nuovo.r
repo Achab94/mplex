@@ -756,10 +756,12 @@ heterEigenvectorCentrality.multiplex <- function(obj, indexNode = 1:length(nodes
   else return(Re(outMatrix[, indexNode]))
 }
 
+##### NUOVO:
+
 #' @importFrom networkD3 simpleNetwork
 #' @importFrom igraph plot.igraph
 #' @export
-plotting.multiplex <- function(obj, index = 1:length(layers.multiplex(obj)), interactive = FALSE, ...){
+plot.multiplex <- function(obj, index = 1:length(layers.multiplex(obj)), interactive = FALSE, ...){
   if(class(obj) != "multiplex") stop("obj argument must be a multiplex object")
 
   if(interactive){
@@ -778,4 +780,33 @@ plotting.multiplex <- function(obj, index = 1:length(layers.multiplex(obj)), int
       readline("Please press [enter] to see next graph.")
     }
   }
+}
+
+
+#' @export
+plot <- function(obj, index = 1:length(layers.multiplex(obj)), interactive = FALSE, ...){
+  UseMethod("plot", obj)
+}
+
+
+#' @export
+summary.multiplex <- function(obj){
+  cat("Multiplex network is composed of", length(nodes.multiplex(mplexObj)), "nodes and",
+      length(layers.multiplex(mplexObj)), "layers.")
+
+}
+
+#' @export
+summary <- function(obj){
+  UseMethod("summary", obj)
+}
+
+#' @export
+print.multiplex <- function(obj){
+
+}
+
+#' @export
+print <- function(obj){
+  UseMethod("print", obj)
 }
