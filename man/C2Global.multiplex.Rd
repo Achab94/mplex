@@ -9,6 +9,9 @@
 }
 \details{
 Instead of the classical definition of \emph{transitivity} and \emph{local clustering coefficient}, this index takes into consideration all the possible tradics structures that takes form even considering interlayers relationships. The index is defined as the ratio between the number of 3-triangles of the multiplex network, and (L - 2) times the number of 2-triads of the multiplex network, where L is the number of layers.
+
+Function use \emph{permutations()} function from \emph{gtools} package. More informations available at \url{https://cran.r-project.org/web/packages/gtools/index.html}.
+
 }
 \usage{
 C2Global.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)))
@@ -26,9 +29,7 @@ C2Global.multiplex(obj, indexLayer = 1:length(layers.multiplex(obj)))
 \section{Warnings }{
   Note that the C2 global clustering coefficient can be defined for a multiplex network with, at least, 3 (intra)layers. So, if \code{indexLayer} argument has length < 3, the function produces an error and halts.
 }
-\details{
-Function use \emph{permutations()} function from \emph{gtools} package. More informations available at \url{https://cran.r-project.org/web/packages/gtools/index.html}.
-}
+
 \value{
   A vector of length one and value corresponding to the C2 global clustering coefficient.
 }
