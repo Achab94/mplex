@@ -12,3 +12,25 @@ Installation
 # install.packages("devtools")
 devtools::install_github("achab94/mplex")
 ```
+
+Creating a `multiplex` structure:
+------------
+``` r
+data(aarhus_mplex)
+
+mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
+                            layersNames = aarhus_mplex$layerNames,
+                            layer1 = aarhus_mplex$L1,
+                            type1 = "undirected",
+                            aarhus_mplex$L2,
+                            aarhus_mplex$L3,
+                            aarhus_mplex$L4,
+                            aarhus_mplex$L5
+                            )
+
+class(aarhus_mplex)
+```
+
+Contacts:
+------------
+**Emanuele Degani**: emanuele.achab [at] gmail [dot] com
