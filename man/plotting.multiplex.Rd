@@ -8,7 +8,7 @@
 This function allows to have a visual approach to the network, according to the number of layers the user wants to display. The function plots a single, interactive graph is just one layer is selected, using \code{\link[networkD3]{simpleNetwork}} function, or a sequence of graphs if >1 layers are selected, using \code{\link[igraph]{plot.igraph}} method. All graphs are easily exportable using RStudio buttons.
 }
 \usage{
-  plotting.multiplex(obj, index)
+  plotting.multiplex(obj, index, interactive = FALSE, ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -18,10 +18,16 @@ This function allows to have a visual approach to the network, according to the 
   \item{index}{
   A vector of IDs (or labels) for the selected layers on which to display the graph.
   }
+  \item{interactive}{
+  Default is FALSE. If TRUE, the function returns an interactive graph for the selected layer.
+  }
+  \item{\dots}{
+  This argument allows to input any other option belonging to \code{\link[igraph]{plot.igraph}} or \code{\link[networkD3]{simpleNetwork}} methods.
+}
 }
 
 \value{
-  If length(index) == 1, then an interactive graph for the selected layer is displayed in the Viewer pane. If length(index) > 1, a sequence of graphs are displayed in the Plot pane, browsable with the 'Enter' key.
+  If interactive == TRUE and length(index) == 1, then an interactive graph for the selected layer is displayed in the Viewer pane. If interactive == FALSE, a sequence of graphs are displayed in the Plot pane, browsable with the 'Enter' key.
 }
 
 \seealso{
@@ -46,11 +52,11 @@ mplexObj <- create.multiplex(nodes = aarhus_mplex$nodes,
 
 # Visualize the interactive graph for the "facebook" layer:
 
-plotting.multiplex(mplexObj, 2)
+plotting.multiplex(mplexObj, index = 2, interactive = TRUE)
 
 # Visualize the sequence of graphs for the "coauthor" and "leisure" layers:
 
-plotting.multiplex(mplexObj, c(3, 4))
+plotting.multiplex(mplexObj, index = c(3, 4))
 }
 
 \keyword{network}
